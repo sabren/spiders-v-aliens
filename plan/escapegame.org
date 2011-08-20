@@ -36,9 +36,9 @@
 **** DONE set up slices so I only need one source image
 **** DONE Sprites for hero, enemies, boxes, and exit
 *** TODO basic gameplay
-**** TODO load the sprites and level
-**** TODO move player
-**** TODO follow player with camera
+**** DONE load the sprites and level
+**** DONE move player
+**** DONE follow player with camera
 **** TODO die on touching enemy
 **** TODO win on touching goal
 
