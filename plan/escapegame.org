@@ -21,16 +21,32 @@
 |  S     |        |        |
 +--------+--------+--------+
 #+END_SRC
-*** goal is to reach the escape square in last room
+*** goal is to reach the escape hatch in last room
+*** aliens kill you
+*** spiders kill aliens
 ** plan
-*** DONE setup flixel project
-*** TODO create DAME  project
-*** TODO draw basic tiles and sprites
+*** DONE project skeleton
+**** DONE set up flixel project
+**** DONE set up git repository
+
+**** DONE create DAME  project
+*** DONE draw tile and sprite maps
+**** DONE configure guides
+**** DONE walls with shadows
+**** DONE set up slices so I only need one source image
+**** DONE Sprites for hero, enemies, boxes, and exit
+*** TODO basic gameplay
+**** TODO load the sprites and level
+**** TODO move player
+**** TODO follow player with camera
+**** TODO die on touching enemy
+**** TODO win on touching goal
 
 
-* iteration 2 : enemies
-** aliens
-** spiders
+
+* iteration 2 : boxes
+** pushing
+** pulling
 
 * iteration 3 : puzzles
 
