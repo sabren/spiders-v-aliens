@@ -1,0 +1,40 @@
+#+TITLE: Escape Game
+
+* iteration 1 : basic gameplay
+** goals
+*** top down view
+*** font-based graphics
+*** 9x9 grid of rooms
+
+#+BEGIN_SRC ditaa
++--------+--------+--------+  S = start
+|        |        |        |  E = end
+|       2         |   E    | 
+|        |    3   |        |
++--------+---  ---+---  ---+
+|        |    4   |    9   |
+|       1         |        |
+|        |    5   |        |
++---  ---+---  ---+---  ---+
+|   0    |    6   |    8   |
+|        |         7       |
+|  S     |        |        |
++--------+--------+--------+
+#+END_SRC
+*** goal is to reach the escape square in last room
+** plan
+*** DONE setup flixel project
+*** TODO create DAME  project
+*** TODO draw basic tiles and sprites
+
+
+* iteration 2 : enemies
+** aliens
+** spiders
+
+* iteration 3 : puzzles
+
+* ---------------------
+
+* iteration ? : music
+
