@@ -1,4 +1,4 @@
-package
+package com.tangentcode.sva
 {
 	import org.flixel.*;
 	

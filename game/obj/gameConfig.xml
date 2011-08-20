@@ -25,7 +25,7 @@
     </source-path>
   </compiler>
   <file-specs>
-    <path-element>C:\ld21\game\src\EscapeGame.as</path-element>
+    <path-element>C:\ld21\game\src\com\tangentcode\sva\EscapeGame.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>30</default-frame-rate>

@@ -1,4 +1,4 @@
-package
+package com.tangentcode.sva
 {
 	import org.flixel.system.FlxPreloader;
 
@@ -6,7 +6,7 @@ package
 	{
 		public function Preloader()
 		{
-			className = "EscapeGame";
+			className = "com.tangentcode.sva.EscapeGame";
 			super();
 		}
 	}
