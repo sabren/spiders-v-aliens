@@ -17,46 +17,38 @@ package com.tangentcode.sva
 		public var owner:FlxSprite;
 		public var content:FlxSprite;
 		
-		public function Grabber(X:Number=0, Y:Number=0)
+		public function Grabber(direction:int, X:Number=0, Y:Number=0)
 		{
 			super(X, Y);
 			loadGraphic(SvA.ImgGrabbers, true, true, SvA.CellW, SvA.CellH);
+			
+			this.frame = direction;
+			if (direction == SvA.N || direction == SvA.S)
+			{
+				this.height = 4;
+				this.width = 12;
+			}
+			else
+			{
+				this.width = 4;
+				this.height = 12;
+			}
+			this.centerOffsets();
 		}
 		
 		
-		override public function update():void
+		public function reposition():void
 		{
-			super.update();
-			this.x = owner.x;
-			this.y = owner.y;
-			
-			switch (this.frame)
-			{
-				case kNFrame:
-					this.y = owner.y - this.height;
-					break;
-				case kSFrame:
-					this.y = owner.y + owner.height;
-					break;
-				case kWFrame:
-					this.x = owner.x - this.width;
-					break;
-				case kEFrame:
-					this.x = owner.x + owner.width;
-					break;
-				default:
-					break;
-			}
-			
-			if (this.content != null)
-			{
-				this.content.x = this.x;
-				this.content.y = this.y;
-				
-				// and for when we let go:
+			SvA.position(this, this.frame, this.owner, 2);
+			if (content && this.exists)
 				this.owner.velocity.copyTo(this.content.velocity);
-			}
-			
+		}
+		
+		public function grab(thing:FlxSprite):void
+		{
+			this.content = thing;
+			this.reposition();
+
 		}
 		
 		
@@ -66,9 +58,8 @@ package com.tangentcode.sva
 			var res:Array = new Array();
 			for (var i:int = 0; i < 4; ++i)
 			{
-				g = res[i] = new Grabber(0, 0);
+				g = res[i] = new Grabber(i, 0, 0);
 				g.owner = forWhom;
-				g.frame = i;
 				group.add(g);
 			}
 			return res;

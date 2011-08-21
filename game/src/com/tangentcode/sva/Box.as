@@ -13,6 +13,9 @@ package com.tangentcode.sva
 		{
 			super(X, Y);
 			loadGraphic(SvA.ImgBox, true, true, SvA.CellW, SvA.CellH);
+			this.solid = true;
+			this.drag.x = 150;
+			this.drag.y = 150;
 		}
 		
 	}

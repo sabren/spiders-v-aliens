@@ -1,5 +1,6 @@
 package com.tangentcode.sva 
 {
+	import org.flixel.FlxSprite;
 	/**
 	 * ...
 	 * @author Michal J Wallace
@@ -14,6 +15,8 @@ package com.tangentcode.sva
 		public static const W:int = 2;
 		public static const E:int = 3;
 		
+		public static const ON:int = 1;
+		public static const OFF:int = 0;
 		
 		
 		// sprite assets (hopefully in alphabetical order...)
@@ -68,15 +71,46 @@ package com.tangentcode.sva
 		
 		[Embed(source = "../../../assets/images/trap.png")]
 		public static var ImgTrap:Class;
-		
-		public function SvA() 
-		{
-		}
-		
+				
 		public static function assert(expression:Boolean):void
 		{
 			if (!expression) throw new Error("Assertion failed!");
 		}
+		
+		public static function sgn(a:Number):int
+		{
+			if (a < 0) return -1;
+			if (a > 0) return 1;
+			return 0;
+		}
+		
+		public static function position(what:FlxSprite, direction:int, relativeTo:FlxSprite, scale:int=1):void
+		{
+			var cx:Number = relativeTo.x + relativeTo.width / 2 - what.width / 2;
+			var cy:Number = relativeTo.y + relativeTo.height / 2 - what.height / 2;
+			
+			switch (direction)
+			{
+				case SvA.N:
+					what.x = cx;
+					what.y = relativeTo.y - what.height * scale;
+					break;
+				case SvA.S:
+					what.x = cx;
+					what.y = relativeTo.y + relativeTo.height;
+					break;
+				case SvA.W:
+					what.x = relativeTo.x - what.width * scale;
+					what.y = cy;
+					break;
+				case SvA.E:
+					what.x = relativeTo.x + relativeTo.width;
+					what.y = cy;
+					break;
+				default:
+					break;
+			}
+		}		
 	}
 
 }

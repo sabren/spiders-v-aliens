@@ -30,9 +30,21 @@
 playstate change.
 ** DONE aliens hurt hero
 ** DONE spiders hurt aliens
-** TODO player can grab blocks
-** TODO player can grab machines
-** TODO push and pull blocks
+** DONE player can grab blocks
+** DONE push and pull blocks
+** DONE aliens chase player
+** DONE spiders flee player
+** DONE player can grab machines to activate them
+*** set up sprites:
+
+- [X] avatarbox
+- [X] cannon
+- [X] checkpoint
+- [ ] heart box
+- [ ] switch
+
+
+
 ** TODO portals teleport
 ** TODO spawner spawns avatar
 ** TODO button triggers lift
@@ -41,7 +53,7 @@ playstate change.
 ** TODO bullets hurt spiders, aliens, hero
 
 * iteration 3 : map and puzzles
-** spider and alien movement
+*
 ** 9x9 grid of rooms
 
 #+BEGIN_SRC ditaa
@@ -61,6 +73,7 @@ playstate change.
 #+END_SRC
 
 * ---------------------
-
+* polish:
+- better shadows for 3d
 * iteration ? : music
 

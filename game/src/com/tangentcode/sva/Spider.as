@@ -10,7 +10,7 @@ package com.tangentcode.sva
 	{
 		
 		
-		public function Spider(X:Number=0, Y:Number=0, SimpleGraphic:Class=null)
+		public function Spider(X:Number=0, Y:Number=0)
 		{
 			super(X, Y);
 			loadGraphic(SvA.ImgSpider, true, true, SvA.CellW, SvA.CellH);

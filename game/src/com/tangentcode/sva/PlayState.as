@@ -49,6 +49,7 @@ package com.tangentcode.sva
 			mOrganics.add(mSpiders);
 			
 			// TODO: mMobiles.add(mAvatar);
+			mMobiles.add(mHero);
 			mMobiles.add(mAliens);
 			mMobiles.add(mSpiders);
 			mMobiles.add(mBoxes);
@@ -56,9 +57,7 @@ package com.tangentcode.sva
 			// mMobiles.add(mBullets); // hearts?			
 			
 			// camera bounds
-			FlxG.camera.setBounds(mShip.boundsMinX, mShip.boundsMinY,
-								  mShip.boundsMaxX - mShip.boundsMinX,
-								  mShip.boundsMaxY - mShip.boundsMinY,
+			FlxG.camera.setBounds(0, 0, SvA.CellW * 40 * 3, SvA.CellH * 25 * 3,
 								  // updates world bounds too:
 								  true);
 								  
@@ -79,8 +78,40 @@ package com.tangentcode.sva
 		
 		private var screenshotcheat:Boolean = false;
 		
+
+
+		private function chasePlayer(group:FlxGroup, thresh:int, speed:int):void
+		{
+			for each (var s:FlxSprite in group.members)
+			{
+				if (s.alive && FlxU.getDistance(mHero.last, s.last) < thresh)
+				{
+					s.acceleration.x = SvA.sgn(mHero.x - s.x) * speed;
+					s.acceleration.y = SvA.sgn(mHero.y - s.y) * speed;
+				}
+				else
+				{
+					s.acceleration.x = 0;
+					s.acceleration.y = 0;
+				}
+			}
+		}
+		
 		override public function update():void 
 		{
+			// do grab stuff first since it screws other things up:
+			mHero.grab(SvA.N, FlxG.keys.W || FlxG.keys.COMMA);
+			mHero.grab(SvA.S, FlxG.keys.S || FlxG.keys.O);			
+			mHero.grab(SvA.W, FlxG.keys.A);
+			mHero.grab(SvA.E, FlxG.keys.D || FlxG.keys.E); // || screenshotcheat);
+			mGrabbers.callAll("reposition");
+			FlxG.overlap(mGrabbers, mMobiles, onGrabMobile);
+			FlxG.overlap(mGrabbers, mMachines, onGrabMachine);
+			
+			
+			chasePlayer(mAliens,  400,   5);
+			chasePlayer(mSpiders, 100, -25);
+			
 			mHero.acceleration.x = 0;
 			mHero.acceleration.y = 0;
 			
@@ -92,14 +123,7 @@ package com.tangentcode.sva
 			if (FlxG.keys.TAB) screenshotcheat = true;
 			
 			
-			mHero.grab(SvA.N, FlxG.keys.W || FlxG.keys.COMMA);
-			mHero.grab(SvA.W, FlxG.keys.A);
-			mHero.grab(SvA.S,  FlxG.keys.S || FlxG.keys.O);
-			mHero.grab(SvA.E, FlxG.keys.D || FlxG.keys.E || screenshotcheat);
-			
 			FlxG.overlap(mHero, mExit, onReachExit);
-			FlxG.overlap(mGrabbers, mMobiles, onGrabMobile);
-			FlxG.overlap(mGrabbers, mMachines, onGrabMachine);
 			FlxG.overlap(mPortals, mMobiles, onPortMobile);
 			
 			FlxG.collide(mAliens, mHero, onAlienVsHero);
@@ -107,12 +131,15 @@ package com.tangentcode.sva
 			FlxG.collide(mBullets, mOrganics, onBulletVsOrganic);
 			FlxG.collide(mTractors, mMobiles, onTractorVsMobile);
 
-			FlxG.collide(mShip.mainLayer, mMobiles);
+			FlxG.collide(mShip.masterLayer, mMobiles);
 			FlxG.collide(mMobiles, mHero);
-			FlxG.collide(mShip.mainLayer, mHero);
+			FlxG.collide(mMachines, mMobiles);
+			FlxG.collide(mMobiles, mMobiles);
+			FlxG.collide(mShip.masterLayer, mHero);
 			
 			if (mHero.wasHurt)
 			{
+				FlxG.shake(0.02, 0.5);
 				updateHearts();
 				mHero.wasHurt = false;
 			}
@@ -132,9 +159,9 @@ package com.tangentcode.sva
 		}
 		
 		
-		private function onSpriteAdded(sprite:FlxSprite, group:FlxGroup):void
+		private function onSpriteAdded(sprite:Object, group:FlxGroup, level:BaseLevel, scrollX:Number, scrollY:Number, properties:Array):void
 		{
-			if (sprite.drag.x == 0)
+			if (sprite is FlxSprite && sprite.drag.x == 0)
 			{
 				sprite.drag.x = 50;
 				sprite.drag.y = 50;
@@ -150,19 +177,22 @@ package com.tangentcode.sva
 			}
 			else if (sprite is Spider)
 			{
-				mSpiders.add(sprite);
+				mSpiders.add(sprite as Spider);
 			}
 			else if (sprite is Alien)
 			{
-				mAliens.add(sprite);
+				mAliens.add(sprite as Alien);
 			}			
 			else if (sprite is Machine)
 			{
-				mBoxes.add(sprite);
+				var m:Machine = sprite as Machine;
+				mMachines.add(sprite as Machine);
+				if (m is Portal) // || m is SwitchBox || m is CheckPoint
+					m.cutPower();
 			}
 			else if (sprite is Box)
 			{
-				mBoxes.add(sprite);
+				mBoxes.add(sprite as Box);
 			}
 		}
 		
@@ -174,7 +204,7 @@ package com.tangentcode.sva
 				
 		private function onAlienVsHero(alien:FlxSprite, hero:FlxSprite):void
 		{
-			if (alien.alive && ! mHero.wasHurt)
+			if (alien.alive && mHero.stunCount == 0)
 			{
 				mHero.hurt(1);
 				mHero.velocity.x = -mHero.velocity.x;
@@ -193,16 +223,30 @@ package com.tangentcode.sva
 		
 		private function onPortMobile(portal:FlxSprite, mobile:FlxSprite):void
 		{
+			
 		}
 
 		private function onGrabMobile(grabber:Grabber, mobile:FlxSprite):void
 		{
-			if (grabber.active && mobile != mHero)
-				grabber.content = mobile;
+			if (grabber.exists && grabber.content == null && mobile != mHero)
+			{
+				if (mobile is Alien && grabber.owner == mHero)
+					mHero.hurt(1);
+				grabber.grab(mobile);
+			}
 		}
 				
-		private function onGrabMachine(grabber:FlxSprite, machine:FlxSprite):void
-		{	
+		private function onGrabMachine(grabber:Grabber, machine:Machine):void
+		{
+			if (grabber.exists && grabber.content == null)
+			{
+				var dispensed:FlxSprite = machine.activate(grabber.frame);
+				if (dispensed) 
+				{
+					SvA.position(dispensed, grabber.frame, machine);
+					add(dispensed);
+				}
+			}
 		}
 
 		private function onTractorVsMobile(pusher:FlxSprite, mobile:FlxSprite):void

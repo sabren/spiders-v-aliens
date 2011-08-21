@@ -1,18 +1,55 @@
 package com.tangentcode.sva 
 {
-	import org.flixel.FlxSprite;
+	import org.flixel.*;
 	
 	/**
 	 * ...
 	 * @author Michal J Wallace
 	 */
-	public class Machine extends FlxSprite 
+	public class Machine extends Powered 
 	{
-		
-		public function Machine(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
+		public var contentClass:Class = FlxSprite;
+		override public function startPowered():Boolean 
 		{
-			super(X, Y);
-			loadGraphic(SvA.ImgCannon, true, true, SvA.CellW, SvA.CellH);
+			return true;
+		}
+				
+		public function Machine(x:Number = 0, y:Number=0) 
+		{
+			super(x, y);
+			this.solid = true;
+			
+			this.mass = Number.MAX_VALUE;
+			this.mass = Number.MAX_VALUE;
+			this.maxVelocity.x = 0;
+			this.maxVelocity.y = 0;
+			this.drag.x = Number.MAX_VALUE;
+			this.drag.y = Number.MAX_VALUE;
+		}
+		
+		/**
+		 * override this to do neat things
+		 * Activation happens from "behind": if the player
+		 * is to the east, then direction is west.
+		 */
+		public function activate(direction:int):FlxSprite
+		{
+			return dispense(direction);
+		}
+		
+		protected function dispense(direction:int):FlxSprite
+		{
+			if (hasPower)
+			{
+				var s:FlxSprite = new contentClass as FlxSprite;
+				SvA.position(s, direction, this);
+				reboot();
+				return s;
+			}
+			else
+			{
+				return null;
+			}
 		}
 		
 	}
