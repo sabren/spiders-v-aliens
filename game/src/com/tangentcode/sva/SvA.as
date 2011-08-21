@@ -9,6 +9,12 @@ package com.tangentcode.sva
 		public static const CellW:int = 16;
 		public static const CellH:int = 20;
 		
+		public static const N:int = 0;
+		public static const S:int = 1;
+		public static const W:int = 2;
+		public static const E:int = 3;
+		
+		
 		
 		// sprite assets (hopefully in alphabetical order...)
 		

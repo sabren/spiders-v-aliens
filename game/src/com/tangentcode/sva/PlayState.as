@@ -33,9 +33,27 @@ package com.tangentcode.sva
 		
 		override public function create():void
 		{
+			
+			// load the map and all the objects therein
 			mShip = new Level_AlienShip(true, onSpriteAdded);
+			
+			// that should get us a hero:
 			SvA.assert(mHero != null);
 			FlxG.camera.follow(mHero);
+			mGrabbers.add(mHero.grabbers);
+			add(mGrabbers);
+			
+			// add the lower stuff to the bigger groups:
+			mOrganics.add(mHero);
+			mOrganics.add(mAliens);
+			mOrganics.add(mSpiders);
+			
+			// TODO: mMobiles.add(mAvatar);
+			mMobiles.add(mAliens);
+			mMobiles.add(mSpiders);
+			mMobiles.add(mBoxes);
+			// mMobiles.add(mTractors);
+			// mMobiles.add(mBullets); // hearts?			
 			
 			// camera bounds
 			FlxG.camera.setBounds(mShip.boundsMinX, mShip.boundsMinY,
@@ -55,17 +73,29 @@ package com.tangentcode.sva
 				h.scrollFactor.y = 0;
 				add(h);
 			}
+			
+			
 		}
+		
+		private var screenshotcheat:Boolean = false;
 		
 		override public function update():void 
 		{
 			mHero.acceleration.x = 0;
 			mHero.acceleration.y = 0;
 			
-			if (FlxG.keys.RIGHT)    mHero.moveE();
-			if (FlxG.keys.LEFT)		mHero.moveW();
 			if (FlxG.keys.UP)       mHero.moveN();
+			if (FlxG.keys.LEFT)		mHero.moveW();
 			if (FlxG.keys.DOWN)     mHero.moveS();
+			if (FlxG.keys.RIGHT)    mHero.moveE();
+			
+			if (FlxG.keys.TAB) screenshotcheat = true;
+			
+			
+			mHero.grab(SvA.N, FlxG.keys.W || FlxG.keys.COMMA);
+			mHero.grab(SvA.W, FlxG.keys.A);
+			mHero.grab(SvA.S,  FlxG.keys.S || FlxG.keys.O);
+			mHero.grab(SvA.E, FlxG.keys.D || FlxG.keys.E || screenshotcheat);
 			
 			FlxG.overlap(mHero, mExit, onReachExit);
 			FlxG.overlap(mGrabbers, mMobiles, onGrabMobile);
@@ -77,6 +107,8 @@ package com.tangentcode.sva
 			FlxG.collide(mBullets, mOrganics, onBulletVsOrganic);
 			FlxG.collide(mTractors, mMobiles, onTractorVsMobile);
 
+			FlxG.collide(mShip.mainLayer, mMobiles);
+			FlxG.collide(mMobiles, mHero);
 			FlxG.collide(mShip.mainLayer, mHero);
 			
 			if (mHero.wasHurt)
@@ -102,6 +134,12 @@ package com.tangentcode.sva
 		
 		private function onSpriteAdded(sprite:FlxSprite, group:FlxGroup):void
 		{
+			if (sprite.drag.x == 0)
+			{
+				sprite.drag.x = 50;
+				sprite.drag.y = 50;
+			}
+			
 			if (sprite is Hero)
 			{
 				mHero = sprite as Hero;
@@ -157,8 +195,10 @@ package com.tangentcode.sva
 		{
 		}
 
-		private function onGrabMobile(grabber:FlxSprite, mobile:FlxSprite):void
+		private function onGrabMobile(grabber:Grabber, mobile:FlxSprite):void
 		{
+			if (grabber.active && mobile != mHero)
+				grabber.content = mobile;
 		}
 				
 		private function onGrabMachine(grabber:FlxSprite, machine:FlxSprite):void

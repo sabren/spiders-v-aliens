@@ -9,7 +9,7 @@ package com.tangentcode.sva
 	public class Box extends FlxSprite 
 	{
 		
-		public function Box(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
+		public function Box(X:Number=0, Y:Number=0) 
 		{
 			super(X, Y);
 			loadGraphic(SvA.ImgBox, true, true, SvA.CellW, SvA.CellH);
