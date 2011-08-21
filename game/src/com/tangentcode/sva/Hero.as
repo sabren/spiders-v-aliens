@@ -1,6 +1,6 @@
 package com.tangentcode.sva 
 {
-	import org.flixel.FlxSprite;
+	import org.flixel.*;
 	
 	/**
 	 * ...
@@ -8,6 +8,10 @@ package com.tangentcode.sva
 	 */
 	public class Hero extends FlxSprite 
 	{		
+		
+		public var wasHurt:Boolean = false;
+		public const maxHealth:Number = 4;
+		
 		public function Hero(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
 		{
 			super(X, Y);
@@ -15,11 +19,26 @@ package com.tangentcode.sva
 			
 			width = SvA.CellW;
 			height = SvA.CellH;
+			
+			this.health = maxHealth;
+			
 			this.maxVelocity.x = 300;
 			this.maxVelocity.y = 300;
 			this.drag.x = 500;
 			this.drag.y = 500;
 		}
+		
+		override public function hurt(Damage:Number):void 
+		{
+			FlxG.log("ouch");
+			this.wasHurt = true;
+			super.hurt(Damage);
+			if (! this.alive)
+			{
+				FlxG.switchState(new DeathState());
+			}
+		}
+		
 		
 		public function moveN():void
 		{

@@ -22,7 +22,7 @@ import com.tangentcode.sva.*;
 		{
 			// Generate maps.
 			layerShipEnvironment = new FlxTilemap;
-			layerShipEnvironment.loadMap( new CSV_ShipEnvironment, Img_ShipEnvironment, 16,20, FlxTilemap.OFF, 0, 1, 20 );
+			layerShipEnvironment.loadMap( new CSV_ShipEnvironment, Img_ShipEnvironment, 16,20, FlxTilemap.OFF, 0, 1, 16 );
 			layerShipEnvironment.x = 0.000000;
 			layerShipEnvironment.y = 0.000000;
 			layerShipEnvironment.scrollFactor.x = 1.000000;
@@ -51,7 +51,7 @@ import com.tangentcode.sva.*;
 		override public function addSpritesForLayerShipLayer2(onAddCallback:Function = null):void
 		{
 			addSpriteToLayer(Alien, ShipLayer2Group , 80.000, 120.000, 0.000, false, 1, 1, onAddCallback );//"Alien"
-			addSpriteToLayer(Exit, ShipLayer2Group , 560.000, 20.000, 0.000, false, 1, 1, onAddCallback );//"Exit"
+			addSpriteToLayer(Exit, ShipLayer2Group , 320.000, 320.000, 0.000, false, 1, 1, onAddCallback );//"Exit"
 			addSpriteToLayer(Box, ShipLayer2Group , 384.000, 340.000, 0.000, false, 1, 1, onAddCallback );//"Box"
 			addSpriteToLayer(Box, ShipLayer2Group , 384.000, 340.000, 0.000, false, 1, 1, onAddCallback );//"Box"
 			addSpriteToLayer(Box, ShipLayer2Group , 384.000, 360.000, 0.000, false, 1, 1, onAddCallback );//"Box"
@@ -66,6 +66,8 @@ import com.tangentcode.sva.*;
 			addSpriteToLayer(Alien, ShipLayer2Group , 496.000, 320.000, 0.000, false, 1, 1, onAddCallback );//"Alien"
 			addSpriteToLayer(Spider, ShipLayer2Group , 480.000, 360.000, 0.000, false, 1, 1, onAddCallback );//"Spider"
 			addSpriteToLayer(Spider, ShipLayer2Group , 512.000, 360.000, 0.000, false, 1, 1, onAddCallback );//"Spider"
+			addSpriteToLayer(Box, ShipLayer2Group , 352.000, 380.000, 0.000, false, 1, 1, onAddCallback );//"Box"
+			addSpriteToLayer(Box, ShipLayer2Group , 384.000, 380.000, 0.000, false, 1, 1, onAddCallback );//"Box"
 		}
 
 

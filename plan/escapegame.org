@@ -1,10 +1,48 @@
-#+TITLE: Escape Game
+#+TITLE: Escape Game : Spiders v. Aliens
 
-* iteration 1 : basic gameplay
+* DONE iteration 1 : basic gameplay
 ** goals
 *** top down view
 *** font-based graphics
-*** 9x9 grid of rooms
+*** goal is to reach the escape hatch in last room
+*** aliens kill you
+*** spiders kill aliens
+** plan
+*** DONE project skeleton
+**** DONE set up flixel project
+**** DONE set up git repository
+
+**** DONE create DAME  project
+*** DONE draw tile and sprite maps
+**** DONE configure guides
+**** DONE walls with shadows
+**** DONE set up slices so I only need one source image
+**** DONE Sprites for hero, enemies, boxes, and exit
+*** DONE basic gameplay
+**** DONE load the sprites and level
+**** DONE move player
+**** DONE follow player with camera
+
+
+
+* TODO iteration 2 : sprite interactions
+** DONE win game on grabbing goal
+playstate change.
+** DONE aliens hurt hero
+** DONE spiders hurt aliens
+** TODO player can grab blocks
+** TODO player can grab machines
+** TODO push and pull blocks
+** TODO portals teleport
+** TODO spawner spawns avatar
+** TODO button triggers lift
+** TODO lift pushes blocks
+** TODO lift pushes multiple blocks ?
+** TODO bullets hurt spiders, aliens, hero
+
+* iteration 3 : map and puzzles
+** spider and alien movement
+** 9x9 grid of rooms
 
 #+BEGIN_SRC ditaa
 +--------+--------+--------+  S = start
@@ -21,34 +59,6 @@
 |  S     |        |        |
 +--------+--------+--------+
 #+END_SRC
-*** goal is to reach the escape hatch in last room
-*** aliens kill you
-*** spiders kill aliens
-** plan
-*** DONE project skeleton
-**** DONE set up flixel project
-**** DONE set up git repository
-
-**** DONE create DAME  project
-*** DONE draw tile and sprite maps
-**** DONE configure guides
-**** DONE walls with shadows
-**** DONE set up slices so I only need one source image
-**** DONE Sprites for hero, enemies, boxes, and exit
-*** TODO basic gameplay
-**** DONE load the sprites and level
-**** DONE move player
-**** DONE follow player with camera
-**** TODO die on touching enemy
-**** TODO win on touching goal
-
-
-
-* iteration 2 : boxes
-** pushing
-** pulling
-
-* iteration 3 : puzzles
 
 * ---------------------
 
