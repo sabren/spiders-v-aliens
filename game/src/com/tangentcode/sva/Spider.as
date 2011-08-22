@@ -6,7 +6,7 @@ package com.tangentcode.sva
 	 * ...
 	 * @author Michal J Wallace
 	 */
-	public class Spider extends FlxSprite 
+	public class Spider extends Capturable 
 	{
 		
 		

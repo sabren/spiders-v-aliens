@@ -12,7 +12,7 @@ package com.tangentcode.sva
 		public var wasHurt:Boolean = false;
 		public const maxHealth:Number = 4;
 		
-		private var mGrabbers:Array;
+		public var mGrabbers:Array;
 		public var grabbers:FlxGroup = new FlxGroup();
 		public var stunCount:int = 0;
 		
@@ -51,33 +51,40 @@ package com.tangentcode.sva
 			if (stunCount > 0)
 				stunCount--;
 		}
+
+		public function accelerate(x:Number, y:Number):void
+		{
+			this.acceleration.x = x;
+			this.acceleration.y = y;
+			/*for (var dir:int = 0; dir < 4; ++dir)
+			{
+				var g:FlxSprite = mGrabbers[dir];
+				if (g != null)
+				{
+					g.acceleration.x = x;
+					g.acceleration.y = y;
+				}
+			}*/
+		}
 		
 		
 		public function moveN():void
 		{
-			this.acceleration.y = -200;
+			this.accelerate(0, -200);
 		}
 		public function moveE():void
 		{
-			this.acceleration.x = 200;
+			this.accelerate(200, 0);
 		}
 		public function moveS():void
 		{
-			this.acceleration.y = 200;
+			this.accelerate(0, 200);
 		}
 		public function moveW():void
 		{
-			this.acceleration.x = -200;
+			this.accelerate( -200, 0);
 		}
-		
-		public function grab(direction:int, cond:Boolean):Boolean
-		{
-			var g:Grabber = this.mGrabbers[direction] as Grabber;
-			g.exists = cond;
-			if (!cond) { g.content = null; }
-			return cond;
-		}
-		
+				
 	}
 
 }

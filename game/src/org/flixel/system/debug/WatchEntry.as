@@ -139,7 +139,8 @@ package org.flixel.system.debug
 		{
 			if(editing)
 				return false;
-			valueDisplay.text = object[field].toString();
+			var obj:Object = object[field];
+			valueDisplay.text = (obj == null) ? "" : obj.toString();
 			return true;
 		}
 		

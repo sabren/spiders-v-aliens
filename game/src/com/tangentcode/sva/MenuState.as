@@ -21,8 +21,8 @@ package com.tangentcode.sva
 			addText(cy-50, 12, "in:");
 			addText(cy-30, 16, "Spiders v. Aliens", 0xffffffff);
 
-			addText(cy+10, 12, "use arrow keys to move");
-			addText(cy+30, 12, "[WASD] or [,AOE] to grab and drag objects");
+			addText(cy + 10, 12, "use [WASD] or [,AOE] to move");
+			addText(cy + 30, 12, "arrow keys to grab and drag objects");
 			
 			addText(FlxG.height - 20, 14, "press space to begin.", 0xffffffff);
 		}

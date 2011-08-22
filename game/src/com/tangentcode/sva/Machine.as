@@ -18,6 +18,7 @@ package com.tangentcode.sva
 		{
 			super(x, y);
 			this.solid = true;
+			this.immovable = true;
 			
 			this.mass = Number.MAX_VALUE;
 			this.mass = Number.MAX_VALUE;
@@ -32,7 +33,7 @@ package com.tangentcode.sva
 		 * Activation happens from "behind": if the player
 		 * is to the east, then direction is west.
 		 */
-		public function activate(direction:int):FlxSprite
+		public function activate(direction:int, byWhom:FlxSprite=null):FlxSprite
 		{
 			return dispense(direction);
 		}

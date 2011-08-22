@@ -56,7 +56,10 @@ package com.tangentcode.sva
 		
 		[Embed(source = "../../../assets/images/hero.png")]
 		public static var ImgHero:Class;
-
+		
+		[Embed(source = "../../../assets/images/key.png")]
+		public static var ImgKey:Class;		
+		
 		[Embed(source = "../../../assets/images/ship.png")]
 		public static var ImgHeroShip:Class;
 		
@@ -90,7 +93,7 @@ package com.tangentcode.sva
 			return 0;
 		}
 		
-		public static function position(what:FlxSprite, direction:int, relativeTo:FlxSprite, scale:int=1):void
+		public static function position(what:FlxSprite, direction:int, relativeTo:FlxSprite):void
 		{
 			var cx:Number = relativeTo.x + relativeTo.width / 2 - what.width / 2;
 			var cy:Number = relativeTo.y + relativeTo.height / 2 - what.height / 2;
@@ -98,25 +101,33 @@ package com.tangentcode.sva
 			switch (direction)
 			{
 				case SvA.N:
-					what.x = cx;
-					what.y = relativeTo.y - what.height * scale;
+					what.reset(cx, relativeTo.y - what.height);
 					break;
 				case SvA.S:
-					what.x = cx;
-					what.y = relativeTo.y + relativeTo.height;
+					what.reset(cx, relativeTo.y + relativeTo.height);
 					break;
 				case SvA.W:
-					what.x = relativeTo.x - what.width * scale;
-					what.y = cy;
+					what.reset(relativeTo.x - what.width, cy);
 					break;
 				case SvA.E:
-					what.x = relativeTo.x + relativeTo.width;
-					what.y = cy;
+					what.reset(relativeTo.x + relativeTo.width, cy);
 					break;
 				default:
 					break;
 			}
-		}		
+		}
+		
+		public static function across(dir:int):int
+		{
+			switch(dir)
+			{
+				case SvA.N: return SvA.S;
+				case SvA.W: return SvA.E;
+				case SvA.S: return SvA.N;
+				case SvA.E: return SvA.W;
+				default: return dir;
+			}
+		}
 	}
 
 }

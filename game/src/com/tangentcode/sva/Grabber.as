@@ -1,7 +1,6 @@
 package com.tangentcode.sva 
 {
-	import org.flixel.FlxGroup;
-	import org.flixel.FlxSprite;
+	import org.flixel.*;
 	
 	/**
 	 * ...
@@ -17,38 +16,47 @@ package com.tangentcode.sva
 		public var owner:FlxSprite;
 		public var content:FlxSprite;
 		
+		/**
+		 * am I done grabbing for this frame?
+		 * (prevents portal loops)
+		 */
+		public var done:Boolean = false;	
+		
 		public function Grabber(direction:int, X:Number=0, Y:Number=0)
 		{
 			super(X, Y);
 			loadGraphic(SvA.ImgGrabbers, true, true, SvA.CellW, SvA.CellH);
 			
 			this.frame = direction;
-			if (direction == SvA.N || direction == SvA.S)
-			{
-				this.height = 4;
-				this.width = 12;
-			}
-			else
-			{
-				this.width = 4;
-				this.height = 12;
-			}
-			this.centerOffsets();
 		}
 		
 		
 		public function reposition():void
 		{
-			SvA.position(this, this.frame, this.owner, 2);
-			if (content && this.exists)
-				this.owner.velocity.copyTo(this.content.velocity);
+			var oldx:Number = x;
+			var oldy:Number = y;
+			SvA.position(this, this.frame, this.owner);
+			if (content)
+			{
+				content.reset(content.x + x - oldx,
+							  content.y + y - oldy);		  
+			}
 		}
 		
 		public function grab(thing:FlxSprite):void
 		{
-			this.content = thing;
-			this.reposition();
-
+			if (thing == null)
+			{
+				// release the captive:
+				if (content is Capturable) { (content as Capturable).captive = false; }
+				// sling effect:
+				if (content != null) { content.velocity.copyFrom(owner.velocity); }
+			}
+			else
+			{
+				if (thing is Capturable) { (thing as Capturable).captive = true; }
+			}
+			content = thing;
 		}
 		
 		
@@ -60,6 +68,7 @@ package com.tangentcode.sva
 			{
 				g = res[i] = new Grabber(i, 0, 0);
 				g.owner = forWhom;
+				SvA.position(g, i, forWhom);
 				group.add(g);
 			}
 			return res;

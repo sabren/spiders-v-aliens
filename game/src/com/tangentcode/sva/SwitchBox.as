@@ -22,7 +22,7 @@ package com.tangentcode.sva
 			super(x, y);			
 		}
 		
-		override public function activate(direction:int):FlxSprite 
+		override public function activate(direction:int, byWhom:FlxSprite=null):FlxSprite 
 		{
 			hasPower ? cutPower() : addPower();
 			return null;

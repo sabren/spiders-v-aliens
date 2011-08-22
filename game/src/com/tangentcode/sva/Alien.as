@@ -6,12 +6,12 @@ package com.tangentcode.sva
 	 * ...
 	 * @author Michal J Wallace
 	 */
-	public class Alien extends FlxSprite 
+	public class Alien extends Capturable
 	{
 		
-		public function Alien(X:Number=0, Y:Number=0, SimpleGraphic:Class=null) 
+		public function Alien(x:Number=0, y:Number=0) 
 		{
-			super(X, Y);
+			super(x, y);
 			loadGraphic(SvA.ImgAlien, true, true, SvA.CellW, SvA.CellH);
 		}
 		
