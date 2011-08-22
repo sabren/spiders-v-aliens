@@ -57,7 +57,7 @@ package com.tangentcode.sva
 			// mMobiles.add(mBullets); // hearts?			
 			
 			// camera bounds
-			FlxG.camera.setBounds(0, 0, SvA.CellW * 40 * 3, SvA.CellH * 25 * 3,
+			FlxG.camera.setBounds(0, 0, SvA.CellW * 40 * 4, SvA.CellH * 25 * 4,
 								  // updates world bounds too:
 								  true);
 								  
@@ -167,6 +167,25 @@ package com.tangentcode.sva
 				sprite.drag.y = 50;
 			}
 			
+			
+			var startDead:Boolean = false;
+			var startOff:Boolean = false;
+			if ( properties )
+			{
+			    var i:uint = properties.length;
+			    while(i--)
+			    {
+					if ( properties[i].name == "startDead" )
+					{
+						startDead = properties[i].value;
+					}
+				}
+			}
+
+			
+			
+			
+			
 			if (sprite is Hero)
 			{
 				mHero = sprite as Hero;
@@ -181,7 +200,9 @@ package com.tangentcode.sva
 			}
 			else if (sprite is Alien)
 			{
-				mAliens.add(sprite as Alien);
+				var a:Alien = sprite as Alien;
+				mAliens.add(a);
+				if (startDead) { a.hurt(1); }
 			}			
 			else if (sprite is Machine)
 			{

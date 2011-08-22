@@ -6,8 +6,13 @@ package com.tangentcode.sva
 	 * ...
 	 * @author Michal J Wallace
 	 */
-	public class Portal extends FlxSprite 
+	public class Portal extends Powered
 	{
+		override public function imgClass():Class 
+		{
+			return SvA.ImgPortal;
+		}
+		
 		
 		public function Portal(X:Number=0, Y:Number=0) 
 		{

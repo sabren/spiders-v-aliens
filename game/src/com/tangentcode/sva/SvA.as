@@ -50,9 +50,15 @@ package com.tangentcode.sva
 		
 		[Embed(source = "../../../assets/images/heart.png")]
 		public static var ImgHeart:Class;
-
+		
+		[Embed(source = "../../../assets/images/heartbox.png")]
+		public static var ImgHeartBox:Class;
+		
 		[Embed(source = "../../../assets/images/hero.png")]
 		public static var ImgHero:Class;
+
+		[Embed(source = "../../../assets/images/ship.png")]
+		public static var ImgHeroShip:Class;
 		
 		[Embed(source = "../../../assets/images/portal.png")]
 		public static var ImgPortal:Class;

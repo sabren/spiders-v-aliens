@@ -52,24 +52,31 @@ playstate change.
 ** TODO lift pushes multiple blocks ?
 ** TODO bullets hurt spiders, aliens, hero
 
+
 * iteration 3 : map and puzzles
-*
-** 9x9 grid of rooms
+** basic map:
 
 #+BEGIN_SRC ditaa
-+--------+--------+--------+  S = start
-|        |        |        |  E = end
-|       2         |   E    | 
-|        |    3   |        |
-+--------+---  ---+---  ---+
-|        |    4   |    9   |
-|       1         |        |
-|        |    5   |        |
-+---  ---+---  ---+---  ---+
-|   0    |    6   |    8   |
-|        |         7       |
-|  S     |        |        |
-+--------+--------+--------+
+
+         +--------+
+         | A      |
+         |        |
+         +--+  +--+
+            |  |
++--------+  |  |  +--------+  S = start
+|        +--+  +--+        |  E = end
+|                          |  A = avatar
+|        +--------+        |  K = key
++---  ---+        +---  ---+
+|        |        |        |
+|        |        |        |
+|        |        |        |
++- --+---+        +--+  ---+
+|    | E             |     |
+|    +---+        +--+     |
+|   b|bSa|        |aK      |
++--------+        +--------+
+
 #+END_SRC
 
 * ---------------------
