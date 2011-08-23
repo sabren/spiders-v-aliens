@@ -6,7 +6,7 @@ package com.tangentcode.sva
 	 * ...
 	 * @author Michal J Wallace
 	 */
-	public class Heart extends FlxSprite 
+	public class Heart extends Pickup 
 	{
 		
 		public function Heart(X:Number=0, Y:Number=0) 

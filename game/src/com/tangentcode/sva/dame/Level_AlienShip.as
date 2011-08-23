@@ -14,11 +14,14 @@ import com.tangentcode.sva.*;
 		[Embed(source="../../../../assets/images/environment.png")] public var Img_Environment:Class;
 		[Embed(source="../../../../assets/mapCSV_AlienShip_Decorations.csv", mimeType="application/octet-stream")] public var CSV_Decorations:Class;
 		[Embed(source="../../../../assets/images/railings.png")] public var Img_Decorations:Class;
+		[Embed(source="../../../../assets/mapCSV_AlienShip_GeistWall.csv", mimeType="application/octet-stream")] public var CSV_GeistWall:Class;
+		[Embed(source="../../../../assets/images/geistwall.png")] public var Img_GeistWall:Class;
 
 		//Tilemaps
 		public var layerOutside:FlxTilemap;
 		public var layerEnvironment:FlxTilemap;
 		public var layerDecorations:FlxTilemap;
+		public var layerGeistWall:FlxTilemap;
 
 		//Sprites
 		public var MobilesGroup:FlxGroup = new FlxGroup;
@@ -35,9 +38,11 @@ import com.tangentcode.sva.*;
 			properties = generateProperties( null );
 			layerOutside = addTilemap( CSV_Outside, Img_Outside, -400.000, -500.000, 40, 50, 0.250, 0.250, false, 100, 1, properties, onAddCallback );
 			properties = generateProperties( null );
-			layerEnvironment = addTilemap( CSV_Environment, Img_Environment, 0.000, 0.000, 16, 20, 1.000, 1.000, false, 16, 1, properties, onAddCallback );
+			layerEnvironment = addTilemap( CSV_Environment, Img_Environment, -32.000, 160.000, 16, 20, 1.000, 1.000, false, 16, 1, properties, onAddCallback );
 			properties = generateProperties( null );
 			layerDecorations = addTilemap( CSV_Decorations, Img_Decorations, 0.000, 0.000, 16, 20, 1.000, 1.000, false, 50, 1, properties, onAddCallback );
+			properties = generateProperties( null );
+			layerGeistWall = addTilemap( CSV_GeistWall, Img_GeistWall, -32.000, 80.000, 16, 20, 1.000, 1.000, false, 1, 1, properties, onAddCallback );
 
 			//Add layers to the master group in correct order.
 			masterLayer.add(layerOutside);
@@ -45,14 +50,15 @@ import com.tangentcode.sva.*;
 			masterLayer.add(MobilesGroup);
 			masterLayer.add(MachineryGroup);
 			masterLayer.add(layerDecorations);
+			masterLayer.add(layerGeistWall);
 
 			if ( addToStage )
 				createObjects(onAddCallback);
 
-			boundsMinX = 0;
+			boundsMinX = -32;
 			boundsMinY = 0;
 			boundsMaxX = 3840;
-			boundsMaxY = 1500;
+			boundsMaxY = 1660;
 			bgColor = 0xff000000;
 		}
 
@@ -66,17 +72,11 @@ import com.tangentcode.sva.*;
 
 		public function addSpritesForLayerMobiles(onAddCallback:Function = null):void
 		{
-			addSpriteToLayer(null, Box, MobilesGroup , 112.000, 1260.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 96.000, 1260.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Hero, MobilesGroup , 496.000, 1360.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Hero"
 			addSpriteToLayer(null, Spider, MobilesGroup , 432.000, 1380.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
 			addSpriteToLayer(null, Box, MobilesGroup , 96.000, 1280.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 128.000, 1260.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 112.000, 1280.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 128.000, 1280.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 96.000, 1300.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 112.000, 1300.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 128.000, 1300.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 992.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 1008.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 1040.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
@@ -110,9 +110,9 @@ import com.tangentcode.sva.*;
 			addSpriteToLayer(null, Alien, MobilesGroup , 1184.000, 840.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
 			addSpriteToLayer(null, Alien, MobilesGroup , 1248.000, 860.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
 			addSpriteToLayer(null, Alien, MobilesGroup , 864.000, 580.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
-			addSpriteToLayer(null, Alien, MobilesGroup , 592.000, 580.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
-			addSpriteToLayer(null, Alien, MobilesGroup , 720.000, 500.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
-			addSpriteToLayer(null, Alien, MobilesGroup , 736.000, 500.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
+			addSpriteToLayer(null, Alien, MobilesGroup , 624.000, 620.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
+			addSpriteToLayer(null, Alien, MobilesGroup , 704.000, 500.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
+			addSpriteToLayer(null, Alien, MobilesGroup , 768.000, 500.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
 			addSpriteToLayer(null, Alien, MobilesGroup , 928.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
 			addSpriteToLayer(null, Alien, MobilesGroup , 528.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
 			addSpriteToLayer(null, Alien, MobilesGroup , 352.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
@@ -128,7 +128,7 @@ import com.tangentcode.sva.*;
 			addSpriteToLayer(null, Spider, MobilesGroup , 192.000, 1380.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
 			addSpriteToLayer(null, Spider, MobilesGroup , 240.000, 1380.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
 			addSpriteToLayer(null, Spider, MobilesGroup , 288.000, 1380.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
-			addSpriteToLayer(null, Avatar, MobilesGroup , 608.000, 460.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Avatar"
+			addSpriteToLayer(null, Geist, MobilesGroup , 592.000, 480.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Geist"
 			addSpriteToLayer(null, Alien, MobilesGroup , 464.000, 1360.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:true }, null ), onAddCallback );//"Alien-Dead"
 			addSpriteToLayer(null, Alien, MobilesGroup , 512.000, 1420.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:true }, null ), onAddCallback );//"Alien-Dead"
 			addSpriteToLayer(null, Alien, MobilesGroup , 560.000, 1340.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:true }, null ), onAddCallback );//"Alien-Dead"
@@ -182,60 +182,71 @@ import com.tangentcode.sva.*;
 			addSpriteToLayer(null, Alien, MobilesGroup , 64.000, 1180.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
 			addSpriteToLayer(null, Alien, MobilesGroup , 304.000, 1080.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
 			addSpriteToLayer(null, Spider, MobilesGroup , 96.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
-			addSpriteToLayer(null, Heart, MobilesGroup , 880.000, 440.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Heart"
+			addSpriteToLayer(null, Heart, MobilesGroup , 864.000, 420.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Heart"
+			addSpriteToLayer(null, Key, MobilesGroup , 576.000, 620.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Key"
+			addSpriteToLayer(null, Heart, MobilesGroup , 848.000, 420.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Heart"
+			addSpriteToLayer(null, Alien, MobilesGroup , 1248.000, 780.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
+			addSpriteToLayer(null, Box, MobilesGroup , 1376.000, 860.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1376.000, 780.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1360.000, 780.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1344.000, 780.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1328.000, 780.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1312.000, 800.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1312.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1312.000, 840.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1248.000, 760.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1264.000, 860.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1232.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1216.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1248.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1232.000, 760.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1264.000, 800.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1264.000, 780.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1264.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1264.000, 840.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1216.000, 760.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1200.000, 760.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1184.000, 760.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1168.000, 760.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1152.000, 760.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1248.000, 880.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1232.000, 880.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1216.000, 880.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1200.000, 880.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1184.000, 880.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1168.000, 880.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1152.000, 880.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1136.000, 880.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1136.000, 760.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 960.000, 840.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 960.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 960.000, 800.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 		}
 
 		public function addSpritesForLayerMachinery(onAddCallback:Function = null):void
 		{
-			linkedObjectDictionary[8] = addSpriteToLayer(null, SwitchBox, MachineryGroup , 464.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"SwitchBox"
+			linkedObjectDictionary[8] = addSpriteToLayer(null, KeyBox, MachineryGroup , 464.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"KeyBox"
 			addSpriteToLayer(null, Exit, MachineryGroup , 432.000, 1160.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Exit"
 			addSpriteToLayer(null, HeroShip, MachineryGroup , 464.000, 1040.000, 270.200, 1, 1, false, 3.000, 2.800, generateProperties( null ), onAddCallback );//"HeroShip"
-			linkedObjectDictionary[0] = addSpriteToLayer(null, Portal, MachineryGroup , 400.000, 1400.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"portalId", value:1 }, { name:"portalTo", value:2 }, { name:"hasPower", value:true }, null ), onAddCallback );//"Portal"
-			linkedObjectDictionary[1] = addSpriteToLayer(null, Portal, MachineryGroup , 336.000, 1400.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"portalId", value:2 }, { name:"portalTo", value:1 }, { name:"hasPower", value:true }, null ), onAddCallback );//"Portal"
-			linkedObjectDictionary[4] = addSpriteToLayer(null, Portal, MachineryGroup , 1056.000, 1400.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"portalId", value:6 }, { name:"portalTo", value:0 }, { name:"hasPower", value:true }, null ), onAddCallback );//"Portal"
-			linkedObjectDictionary[5] = addSpriteToLayer(null, Portal, MachineryGroup , 1120.000, 1400.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"portalId", value:5 }, { name:"portalTo", value:0 }, { name:"hasPower", value:true }, null ), onAddCallback );//"Portal"
-			addSpriteToLayer(null, AvatarBox, MachineryGroup , 832.000, 440.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"AvatarBox"
-			addSpriteToLayer(null, Cannon, MachineryGroup , 1136.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Cannon"
-			addSpriteToLayer(null, Cannon, MachineryGroup , 1120.000, 860.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Cannon"
-			linkedObjectDictionary[9] = addSpriteToLayer(null, SwitchBox, MachineryGroup , 864.000, 1380.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"SwitchBox"
-			linkedObjectDictionary[2] = addSpriteToLayer(null, Portal, MachineryGroup , 336.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"portalId", value:3 }, { name:"portalTo", value:4 }, { name:"hasPower", value:false }, null ), onAddCallback );//"Portal - noPower"
-			linkedObjectDictionary[3] = addSpriteToLayer(null, Portal, MachineryGroup , 400.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"portalId", value:4 }, { name:"portalTo", value:3 }, { name:"hasPower", value:false }, null ), onAddCallback );//"Portal - noPower"
-			linkedObjectDictionary[6] = addSpriteToLayer(null, Portal, MachineryGroup , 592.000, 1340.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"portalId", value:8 }, { name:"portalTo", value:7 }, { name:"hasPower", value:false }, null ), onAddCallback );//"Portal - noPower"
-			linkedObjectDictionary[7] = addSpriteToLayer(null, Portal, MachineryGroup , 864.000, 1340.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"portalId", value:7 }, { name:"portalTo", value:8 }, { name:"hasPower", value:false }, null ), onAddCallback );//"Portal - noPower"
-			addSpriteToLayer(null, Cannon, MachineryGroup , 1120.000, 780.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Cannon"
-			addSpriteToLayer(null, Box, MachineryGroup , 1136.000, 880.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1152.000, 880.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1168.000, 880.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1184.000, 880.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1200.000, 880.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1216.000, 880.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1232.000, 880.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1248.000, 880.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1136.000, 760.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1152.000, 760.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1168.000, 760.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1184.000, 760.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1200.000, 760.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1216.000, 760.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1264.000, 840.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1264.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1264.000, 780.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1264.000, 800.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1232.000, 760.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1248.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1216.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1232.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1264.000, 860.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1248.000, 760.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1312.000, 840.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1312.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1312.000, 800.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1328.000, 780.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1344.000, 780.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1360.000, 780.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1376.000, 780.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MachineryGroup , 1376.000, 860.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Alien, MachineryGroup , 1248.000, 780.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
+			linkedObjectDictionary[0] = addSpriteToLayer(null, Portal, MachineryGroup , 400.000, 1400.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:true }, null ), onAddCallback );//"Portal"
+			linkedObjectDictionary[1] = addSpriteToLayer(null, Portal, MachineryGroup , 336.000, 1400.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:true }, null ), onAddCallback );//"Portal"
+			linkedObjectDictionary[4] = addSpriteToLayer(null, Portal, MachineryGroup , 1056.000, 1400.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:true }, null ), onAddCallback );//"Portal"
+			linkedObjectDictionary[5] = addSpriteToLayer(null, Portal, MachineryGroup , 1120.000, 1400.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:true }, null ), onAddCallback );//"Portal"
+			addSpriteToLayer(null, Cannon, MachineryGroup , 1136.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:true }, null ), onAddCallback );//"Cannon"
+			addSpriteToLayer(null, Cannon, MachineryGroup , 1120.000, 860.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:true }, null ), onAddCallback );//"Cannon"
+			linkedObjectDictionary[9] = addSpriteToLayer(null, KeyBox, MachineryGroup , 864.000, 1380.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"KeyBox"
+			linkedObjectDictionary[2] = addSpriteToLayer(null, Portal, MachineryGroup , 336.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:false }, null ), onAddCallback );//"Portal - noPower"
+			linkedObjectDictionary[3] = addSpriteToLayer(null, Portal, MachineryGroup , 400.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:false }, null ), onAddCallback );//"Portal - noPower"
+			linkedObjectDictionary[6] = addSpriteToLayer(null, Portal, MachineryGroup , 592.000, 1340.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:false }, null ), onAddCallback );//"Portal - noPower"
+			linkedObjectDictionary[7] = addSpriteToLayer(null, Portal, MachineryGroup , 864.000, 1340.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:false }, null ), onAddCallback );//"Portal - noPower"
+			addSpriteToLayer(null, Cannon, MachineryGroup , 1120.000, 780.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:true }, null ), onAddCallback );//"Cannon"
+			linkedObjectDictionary[10] = addSpriteToLayer(null, Portal, MachineryGroup , 528.000, 1380.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:true }, null ), onAddCallback );//"Portal"
+			linkedObjectDictionary[11] = addSpriteToLayer(null, Portal, MachineryGroup , 848.000, 520.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:true }, null ), onAddCallback );//"Portal"
+			linkedObjectDictionary[13] = addSpriteToLayer(null, Portal, MachineryGroup , 832.000, 420.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:false }, null ), onAddCallback );//"Portal - noPower"
+			linkedObjectDictionary[12] = addSpriteToLayer(null, KeyBox, MachineryGroup , 880.000, 420.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"KeyBox"
+			linkedObjectDictionary[14] = addSpriteToLayer(null, Portal, MachineryGroup , 608.000, 460.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:false }, null ), onAddCallback );//"Portal - noPower"
+			addSpriteToLayer(null, Cannon, MachineryGroup , 1136.000, 1220.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:true }, null ), onAddCallback );//"Cannon"
+			addSpriteToLayer(null, Cannon, MachineryGroup , 1136.000, 1180.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:true }, null ), onAddCallback );//"Cannon"
 		}
 
 		public function generateObjectLinks(onAddCallback:Function = null):void
@@ -248,6 +259,10 @@ import com.tangentcode.sva.*;
 			createLink(linkedObjectDictionary[8], linkedObjectDictionary[2], onAddCallback, generateProperties( null ) );
 			createLink(linkedObjectDictionary[9], linkedObjectDictionary[7], onAddCallback, generateProperties( null ) );
 			createLink(linkedObjectDictionary[9], linkedObjectDictionary[6], onAddCallback, generateProperties( null ) );
+			createLink(linkedObjectDictionary[10], linkedObjectDictionary[11], onAddCallback, generateProperties( null ) );
+			createLink(linkedObjectDictionary[12], linkedObjectDictionary[13], onAddCallback, generateProperties( null ) );
+			createLink(linkedObjectDictionary[12], linkedObjectDictionary[14], onAddCallback, generateProperties( null ) );
+			createLink(linkedObjectDictionary[14], linkedObjectDictionary[13], onAddCallback, generateProperties( null ) );
 		}
 
 	}

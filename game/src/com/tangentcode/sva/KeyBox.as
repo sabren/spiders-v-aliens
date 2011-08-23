@@ -5,26 +5,25 @@ package com.tangentcode.sva
 	 * ...
 	 * @author Michal J Wallace
 	 */
-	public class SwitchBox extends Machine 
+	public class KeyBox extends Machine 
 	{
 
 		override public function imgClass():Class
 		{
-			return SvA.ImgSwitchBox;
+			return SvA.ImgKeyBox;
 		}
 		override public function startPowered():Boolean 
 		{
 			return false;
 		}
 		
-		public function SwitchBox(x:Number=0, y:Number=0) 
+		public function KeyBox(x:Number=0, y:Number=0) 
 		{
 			super(x, y);			
 		}
 		
 		override public function activate(direction:int, byWhom:FlxSprite=null):FlxSprite 
 		{
-			hasPower ? cutPower() : addPower();
 			return null;
 		}
 		

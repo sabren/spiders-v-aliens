@@ -31,6 +31,5 @@ package com.tangentcode.sva
 			}
 			return b;
 		}
-				
 	}
 }

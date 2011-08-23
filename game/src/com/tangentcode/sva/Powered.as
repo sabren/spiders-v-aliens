@@ -1,6 +1,6 @@
 package com.tangentcode.sva 
 {
-	import org.flixel.FlxSprite;
+	import org.flixel.*;
 	
 	/**
 	 * ...
@@ -9,11 +9,13 @@ package com.tangentcode.sva
 	public class Powered extends FlxSprite 
 	{
 		/**
-		 * time (in frames) to recycle
+		 * time (in seconds) to recycle
 		 */
-		public var rebootLength:int = 12;
-		public var rebootCount:int = 0;
+		public var rebootLength:Number = 0.5;
+		public var rebootCount:Number = 0;
 		public var hasPower:Boolean;
+		
+		public var sendPowerTo:Array = [];
 		
 		public function imgClass():Class { return ImgDefault; }
 		public function startPowered():Boolean { return true; }		
@@ -29,7 +31,8 @@ package com.tangentcode.sva
 		{
 			if (rebootCount > 0 && ! this.hasPower)
 			{
-				if (rebootCount-- == 0)
+				rebootCount -= FlxG.elapsed;
+				if (rebootCount <= 0)
 				{
 					addPower();
 				}
@@ -41,12 +44,20 @@ package com.tangentcode.sva
 		{
 			this.hasPower = true;
 			this.frame = 1;
+			for each (var p:Powered in sendPowerTo)
+			{
+				p.addPower();
+			}
 		}
 		
 		public function cutPower():void
 		{
 			this.hasPower = false;
 			this.frame = 0;
+			for each (var p:Powered in sendPowerTo)
+			{
+				p.cutPower();
+			}
 		}
 		
 		public function reboot():void

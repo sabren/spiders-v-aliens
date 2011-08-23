@@ -45,12 +45,14 @@ playstate change.
 
 
 
-** TODO portals teleport
-** TODO spawner spawns avatar
-** TODO button triggers lift
-** TODO lift pushes blocks
-** TODO lift pushes multiple blocks ?
-** TODO bullets hurt spiders, aliens, hero
+** DONE portals teleport
+** DONE bullets hurt spiders, aliens, hero
+** DONE mimeogeist mimics hero
+** DONE keep geist inside the ship
+** DONE send power between machines
+
+** TODO show text for each screen/area
+** TODO opening cut scenes
 
 
 * iteration 3 : map and story
@@ -124,15 +126,9 @@ playstate change.
 
 *** room 5
 - I can't reach the cannon from here.
-  But that mimeogeist sure could!
+  But that mimeogeist could do it!
 
-
-
-   
-
-
-
-
+*** room 5 
 
 
 
@@ -143,3 +139,7 @@ playstate change.
 - better shadows for 3d
 * iteration ? : music
 
+* sequel: re-add tractors
+** TODO button triggers lift
+** TODO lift pushes blocks
+** TODO lift pushes multiple blocks ?

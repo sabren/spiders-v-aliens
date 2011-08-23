@@ -1,6 +1,7 @@
 package com.tangentcode.sva 
 {
-	import org.flixel.FlxSprite;
+	import org.flixel.*;
+	
 	/**
 	 * ...
 	 * @author Michal J Wallace
@@ -24,9 +25,6 @@ package com.tangentcode.sva
 		[Embed(source = "../../../assets/images/alien.png")]
 		public static var ImgAlien:Class;
 		
-		[Embed(source = "../../../assets/images/avatar.png")]
-		public static var ImgAvatar:Class;
-		
 		[Embed(source = "../../../assets/images/avatarbox.png")]
 		public static var ImgAvatarBox:Class;
 		
@@ -45,6 +43,9 @@ package com.tangentcode.sva
 		[Embed(source = "../../../assets/images/exit.png")]
 		public static var ImgExit:Class;
 		
+		[Embed(source = "../../../assets/images/geist.png")]
+		public static var ImgGeist:Class;
+		
 		[Embed(source = "../../../assets/images/grabbers.png")]
 		public static var ImgGrabbers:Class;
 		
@@ -58,7 +59,10 @@ package com.tangentcode.sva
 		public static var ImgHero:Class;
 		
 		[Embed(source = "../../../assets/images/key.png")]
-		public static var ImgKey:Class;		
+		public static var ImgKey:Class;
+		
+		[Embed(source = "../../../assets/images/keybox.png")]
+		public static var ImgKeyBox:Class;		
 		
 		[Embed(source = "../../../assets/images/ship.png")]
 		public static var ImgHeroShip:Class;
@@ -72,8 +76,8 @@ package com.tangentcode.sva
 		[Embed(source = "../../../assets/images/spider.png")]
 		public static var ImgSpider:Class;
 		
-		[Embed(source = "../../../assets/images/switch.png")]
-		public static var ImgSwitch:Class;
+		[Embed(source = "../../../assets/images/switchbox.png")]
+		public static var ImgSwitchBox:Class;
 		
 		[Embed(source = "../../../assets/images/tractor.png")]
 		public static var ImgTractor:Class;
@@ -92,7 +96,7 @@ package com.tangentcode.sva
 			if (a > 0) return 1;
 			return 0;
 		}
-		
+
 		public static function position(what:FlxSprite, direction:int, relativeTo:FlxSprite):void
 		{
 			var cx:Number = relativeTo.x + relativeTo.width / 2 - what.width / 2;
@@ -101,20 +105,36 @@ package com.tangentcode.sva
 			switch (direction)
 			{
 				case SvA.N:
-					what.reset(cx, relativeTo.y - what.height);
+					moveTo(what, cx, relativeTo.y - what.height);
 					break;
 				case SvA.S:
-					what.reset(cx, relativeTo.y + relativeTo.height);
+					moveTo(what, cx, relativeTo.y + relativeTo.height);
 					break;
 				case SvA.W:
-					what.reset(relativeTo.x - what.width, cy);
+					moveTo(what, relativeTo.x - what.width, cy);
 					break;
 				case SvA.E:
-					what.reset(relativeTo.x + relativeTo.width, cy);
+					moveTo(what, relativeTo.x + relativeTo.width, cy);
 					break;
 				default:
 					break;
 			}
+			
+		}
+
+		/**
+		 * Move object without screwing up velocity.
+		 * Like what.reset(), but only for location.
+		 * @param	what
+		 * @param	x
+		 * @param	y
+		 */
+		public static function moveTo(what:FlxSprite, x:Number, y:Number):void
+		{
+			what.x = x;
+			what.y = y;
+			what.last.x = x;
+			what.last.y = y;
 		}
 		
 		public static function across(dir:int):int

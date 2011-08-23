@@ -36,10 +36,10 @@ package com.tangentcode.sva
 			var oldx:Number = x;
 			var oldy:Number = y;
 			SvA.position(this, this.frame, this.owner);
-			if (content)
+			// content may be null OR it may have disappeared (ex: a key into a lock)
+			if (content && content.exists)
 			{
-				content.reset(content.x + x - oldx,
-							  content.y + y - oldy);		  
+				SvA.moveTo(content, content.x + x - oldx, content.y + y - oldy);		  
 			}
 		}
 		

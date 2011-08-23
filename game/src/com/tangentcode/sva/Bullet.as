@@ -15,6 +15,11 @@ package com.tangentcode.sva
 			loadGraphic(SvA.ImgBullet, true, true, SvA.CellW, SvA.CellH);
 		}
 		
+		override public function update():void 
+		{
+			super.update();
+		}
+		
 	}
 
 }
