@@ -1,6 +1,7 @@
 package com.tangentcode.sva
 {
 	import flash.display.DisplayObject;
+	import flash.geom.Point;
 	import flash.text.engine.BreakOpportunity;
 	import org.flixel.*;
 	import com.tangentcode.sva.dame.*;
@@ -13,7 +14,10 @@ package com.tangentcode.sva
 		protected var mExit:Exit;
 		protected var mGeist:Geist;
 		
-		protected var mHearts:Array = new Array();
+		protected var mHudHearts:Array = new Array();
+		protected var mHudText:FlxText;
+		
+		protected var mNarration:FlxGroup = new FlxGroup();
 		
 		// groups
 		protected var mSpiders:FlxGroup = new FlxGroup();
@@ -42,7 +46,7 @@ package com.tangentcode.sva
 			
 			// load the map and all the objects therein
 			mShip = new Level_AlienShip(true, onAddObject);
-			// mShip.layerGeistWall.visible = false;
+			mShip.layerGeistWall.visible = false;
 			
 			// that should get us a hero and a mimeogeist:
 			SvA.assert(mHero != null);
@@ -55,7 +59,6 @@ package com.tangentcode.sva
 			mGrabbers.callAll("reposition");
 			
 			FlxG.camera.follow(mHero);
-
 			
 			// add the lower stuff to the bigger groups:
 			mOrganics.add(mHero);
@@ -72,24 +75,43 @@ package com.tangentcode.sva
 			mMobiles.add(mDraggable);
 
 			// mMobiles.add(mTractors);
-			// mMobiles.add(mBullets); // hearts?			
+			// mMobiles.add(mBullets); // hearts?
+			
+			add(mNarration);
+			
 			
 			// camera bounds
 			FlxG.camera.setBounds(0, 0, SvA.CellW * 40 * 4, SvA.CellH * 25 * 4,
 								  // updates world bounds too:
 								  true);
 								  
-								  
+			// build the HUD:
+			var hudHeight:int = 64;
+			var hudPadding:int = 4;
+			var hud:FlxSprite = new FlxSprite(0, FlxG.height - hudHeight);
+			var noScroll:FlxPoint = new FlxPoint(0, 0);
+			
+			// background:
+			hud.makeGraphic(FlxG.width, hudHeight, 0xee000000);
+			hud.scrollFactor = noScroll;
+			add(hud);
+			
 			// heart display:
 			var h:Heart;
 			mHero.health = mHero.maxHealth;
 			for (var i:int = 0; i < mHero.maxHealth; ++i)
 			{
-				h = mHearts[i] = new Heart(FlxG.width - (mHero.maxHealth + 0.5 - i) * SvA.CellW, 4);
-				h.scrollFactor.x = 0;
-				h.scrollFactor.y = 0;
+				h = mHudHearts[i] = new Heart(FlxG.width - hudPadding - (mHero.maxHealth + 0.5 - i) * SvA.CellW,
+											  FlxG.height - hudHeight  + hudPadding);
+				h.scrollFactor = noScroll;
 				add(h);
 			}
+			
+			mHudText = new FlxText(hudPadding, FlxG.height - hudHeight + hudPadding * 2, FlxG.width * 2 / 3,
+						"This is the Hud.\nBooyah.");
+			mHudText.size = 16;
+			mHudText.scrollFactor = noScroll;
+			add(mHudText);
 			
 			
 			FlxG.watch(mHero.mGrabbers[SvA.N], "content", "N");
@@ -140,6 +162,7 @@ package com.tangentcode.sva
 		{
 			// if (FlxG.keys.TAB) screenshotcheat = true;
 			
+			// wasd or dvorak equivalents:
 			mGrabKeys[SvA.N] = FlxG.keys.W || FlxG.keys.COMMA;
 			mGrabKeys[SvA.W] = FlxG.keys.A;
 			mGrabKeys[SvA.S] = FlxG.keys.S || FlxG.keys.O
@@ -186,6 +209,7 @@ package com.tangentcode.sva
 			if (FlxG.keys.DOWN)  mAvatars.callAll("moveS");
 			if (FlxG.keys.RIGHT) mAvatars.callAll("moveE");
 			
+			// helper cam to see what the geist is up to
 			if (FlxG.keys.justPressed("G"))
 			{
 				mToggleCam = !mToggleCam;
@@ -203,8 +227,10 @@ package com.tangentcode.sva
 			FlxG.collide(mShip.masterLayer, mMobiles, onCollide);
 			FlxG.collide(mBullets, mShip.masterLayer, onBulletVsAnything);
 			
+			mHudText.text = "";
+			FlxG.overlap(mHero, mNarration, onNarration);
 			
-						
+			
 			if (mHero.wasHurt)
 			{
 				FlxG.shake(0.02, 0.5);
@@ -221,20 +247,18 @@ package com.tangentcode.sva
 			var h:Heart;
 			for (var i:int = 0; i < mHero.maxHealth; ++i)
 			{
-				h = mHearts[i];
+				h = mHudHearts[i];
 				h.frame = (i + 1 > mHero.health) ? 1 : 0;
 			}
 		}
-		
-		
+				
 		private function onAddObject(obj:Object, group:FlxGroup, level:BaseLevel, scrollX:Number, scrollY:Number, properties:Array):void
 		{
 			if (obj is FlxSprite && obj.drag.x == 0)
 			{
 				obj.drag.x = 50;
 				obj.drag.y = 50;
-			}
-			
+			}	
 			
 			var startDead:Boolean = false;
 			var hasPower:Boolean = false;
@@ -273,6 +297,11 @@ package com.tangentcode.sva
 					var pow2:Powered = link.toObject as Powered;
 					pow1.sendPowerTo.push(pow2);
 				}
+			}
+			
+			else if (obj is TextData)
+			{
+				mNarration.add(new Narration(obj as TextData));
 			}
 			
 			else if (obj is Alien)
@@ -323,6 +352,11 @@ package com.tangentcode.sva
 			FlxG.log("you won!");
 		}
 		
+		
+		private function onNarration(hero:FlxSprite, narration:Narration):void
+		{
+			mHudText.text = narration.text;
+		}
 		
 		private function onCollide(o1:FlxObject, o2:FlxObject):void
 		{

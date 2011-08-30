@@ -1,40 +1,71 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8"/>
-	<title>game</title>
-	<meta name="description" content="" />
-	
-	<script src="js/swfobject.js"></script>
-	<script>
-		var flashvars = {
-		};
-		var params = {
-			menu: "false",
-			scale: "noScale",
-			allowFullscreen: "true",
-			allowScriptAccess: "always",
-			bgcolor: "",
-			wmode: "direct" // can cause issues with FP settings & webcam
-		};
-		var attributes = {
-			id:"game"
-		};
-		swfobject.embedSWF(
-			"game.swf", 
-			"altContent", "100%", "100%", "10.0.0", 
-			"expressInstall.swf", 
-			flashvars, params, attributes);
-	</script>
-	<style>
-		html, body { height:100%; overflow:hidden; }
-		body { margin:0; }
-	</style>
+  <meta charset="utf-8"/>
+  <title>Spiders v. Aliens</title>
+  <meta name="description" content="" />
+  
+  <script src="js/swfobject.js"></script>
+  <script>
+    var flashvars = {
+    };
+    var params = {
+       menu: "false",
+       scale: "noScale",
+       allowFullscreen: "true",
+       allowScriptAccess: "always",
+       bgcolor: "",
+       wmode: "direct" // can cause issues with FP settings & webcam
+    };
+    var attributes = {
+       id:"game"
+    };
+    swfobject.embedSWF(
+       "SpidersVAliens.swf", 
+       "altContent", "640", "480", "10.0.0", 
+       "expressInstall.swf", 
+       flashvars, params, attributes);
+  </script>
+  <style>
+    html, body { height:100%; overflow:hidden; }
+    body {
+       width:640px; 
+       margin:auto; margin-top:16px;
+       background: #999;
+       font-family: verdana, arial, sans;
+    }
+    h1 {
+       font-family: "Impact"; 
+       font-weight: normal;
+       border-bottom: solid black 2px;
+       margin-bottom: 8px;
+    }
+    #footer
+    {
+       border-top: solid black 2px;
+       margin-top: 8px;
+    }
+    #game
+    {
+       border: solid black 2px;
+    }
+  </style>
 </head>
 <body>
-	<div id="altContent">
-		<h1>game</h1>
-		<p><a href="http://www.adobe.com/go/getflashplayer">Get Adobe Flash player</a></p>
-	</div>
+  <h1>Spiders v. Aliens</h1>
+
+
+  <div id="altContent">
+    <h1>spiders v. aliens</h1>
+    <p><a href="http://www.adobe.com/go/getflashplayer">Get Adobe Flash player</a></p>
+  </div>
+
+  <div id="footer">
+    <p>Made in 72 hours for Ludum Dare 21.
+      <a href="http://www.ludumdare.com/compo/ludum-dare-21/?action=rate&uid=5396">Vote here</a>.      
+    </p>
+  </div>
+
+
 </body>
 </html>

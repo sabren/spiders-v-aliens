@@ -13,6 +13,10 @@ package com.tangentcode.sva
 		{
 			super(x, y);
 			loadGraphic(SvA.ImgAlien, true, true, SvA.CellW, SvA.CellH);
+			maxVelocity.x = 75;
+			maxVelocity.y = 75;
+			drag.x = 500;
+			drag.y = 500;
 		}
 		
 		override public function hurt(Damage:Number):void 

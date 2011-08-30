@@ -12,7 +12,7 @@ package com.tangentcode.sva
 		public var wasHurt:Boolean = false;
 		public const maxHealth:Number = 5;
 		
-		public var stunLength:Number = 1.5; // seconds
+		public var stunLength:Number = 2.5; // seconds
 		public var stunCount:Number = 0;
 		
 		public function Hero(X:Number=0, Y:Number=0) 
@@ -41,8 +41,6 @@ package com.tangentcode.sva
 			if (stunCount < 0)
 				stunCount = 0;
 		}
-
-
 				
 	}
 
