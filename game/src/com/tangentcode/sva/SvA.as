@@ -84,6 +84,12 @@ package com.tangentcode.sva
 		
 		[Embed(source = "../../../assets/images/trap.png")]
 		public static var ImgTrap:Class;
+		
+		
+		// music
+		[Embed(source = "../../../assets/sounds/sva-music.mp3")]
+		public static var SndMusic:Class;
+		
 				
 		public static function assert(expression:Boolean):void
 		{

@@ -107,9 +107,9 @@ package com.tangentcode.sva
 				add(h);
 			}
 			
-			mHudText = new FlxText(hudPadding, FlxG.height - hudHeight + hudPadding * 2, FlxG.width * 2 / 3,
+			mHudText = new FlxText(hudPadding, FlxG.height - hudHeight + hudPadding * 2, FlxG.width * 0.75,
 						"This is the Hud.\nBooyah.");
-			mHudText.size = 16;
+			mHudText.size = 14;
 			mHudText.scrollFactor = noScroll;
 			add(mHudText);
 			
@@ -118,6 +118,9 @@ package com.tangentcode.sva
 			FlxG.watch(mHero.mGrabbers[SvA.W], "content", "W");
 			FlxG.watch(mHero.mGrabbers[SvA.S], "content", "S");
 			FlxG.watch(mHero.mGrabbers[SvA.E], "content", "E");
+			
+			
+			FlxG.playMusic(SvA.SndMusic);
 		}
 				
 		private var chasePointHero:FlxPoint = new FlxPoint();
@@ -225,6 +228,7 @@ package com.tangentcode.sva
 			FlxG.overlap(mHero, mPickups, onPickup);
 			FlxG.overlap(mKeys, mMachines, onKeyVsMachine);
 			FlxG.collide(mShip.masterLayer, mMobiles, onCollide);
+			FlxG.overlap(mSpiders, mAliens, onSpiderVsAlien);
 			FlxG.collide(mBullets, mShip.masterLayer, onBulletVsAnything);
 			
 			mHudText.text = "";

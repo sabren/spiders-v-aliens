@@ -79,11 +79,24 @@ import com.tangentcode.sva.*;
 		{
 			var obj:Object;
 
-			callbackNewData(new TextData(464.000, 1320.000, 80.000, 100.000, 0.000, "HERE IS SOME COOL COOL TEXT.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
+			callbackNewData(new TextData(464.000, 1320.000, 80.000, 100.000, 0.000, "When I come to, the Dentists are dead. Good riddance.\rI can see my ship outside. Now's my chance to escape!","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
 			callbackNewData(new TextData(560.000, 1320.000, 64.000, 60.000, 0.000, "This is a portal.\rIt's locked from the other side.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
-			callbackNewData(new TextData(384.000, 1380.000, 64.000, 60.000, 0.000, "This is a Portal.\rNyah Nyah Blah blah blah.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
-			callbackNewData(new TextData(528.000, 1280.000, 80.000, 30.000, 0.000, "Right click to edit text.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
-			callbackNewData(new TextData(400.000, 1280.000, 80.000, 30.000, 0.000, "Right click to edit text.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
+			callbackNewData(new TextData(384.000, 1380.000, 64.000, 60.000, 0.000, "This is a Portal.\rI can grab it to teleport to the other side.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
+			callbackNewData(new TextData(528.000, 1280.000, 80.000, 30.000, 0.000, "I can see my spaceship docked outside.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
+			callbackNewData(new TextData(400.000, 1280.000, 80.000, 30.000, 0.000, "I can see the airlock leading to my ship.\rBut how am I supposed to get in there?","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
+			callbackNewData(new TextData(304.000, 1360.000, 64.000, 100.000, 0.000, "Arnaxian gut spiders. They can't hurt me.\rLooks like the Dentists trapped them all in here.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
+			callbackNewData(new TextData(96.000, 1320.000, 48.000, 60.000, 0.000, "The Dentists blockaded the hallway.\rI'll have to drag those boxes out of the way.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
+			callbackNewData(new TextData(272.000, 920.000, 48.000, 60.000, 0.000, "Those heart-shaped things are medical equipment.\rThey'll come in handy if I get injured.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
+			callbackNewData(new TextData(320.000, 1140.000, 48.000, 100.000, 0.000, "This portal is controlled by a lock on the other side.\rI'll need a key to turn it back on.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
+			callbackNewData(new TextData(96.000, 1260.000, 48.000, 60.000, 0.000, "Uh-oh. More Dentists, and they don't look happy.\rI'd better find some kind of weapon.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
+			callbackNewData(new TextData(496.000, 800.000, 80.000, 60.000, 0.000, "I can grab the switch to turn this portal on and off.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
+			callbackNewData(new TextData(544.000, 600.000, 144.000, 50.000, 0.000, "They've trapped the mimeogeist in some kind of cage.\rI should let the poor thing out.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
+			callbackNewData(new TextData(704.000, 600.000, 64.000, 50.000, 0.000, "What the heck? Is that...?\rWhat are Dentists doing with a mimeogeist?!","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
+			callbackNewData(new TextData(816.000, 800.000, 64.000, 60.000, 0.000, "The switch is on the other side of the wall.\rHow am I supposed to turn this portal on?","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
+			callbackNewData(new TextData(976.000, 800.000, 64.000, 60.000, 0.000, "Laser cannons! Now we're talking. I can grab\rthem from any side to fire in the opposite direction.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
+			callbackNewData(new TextData(1120.000, 1040.000, 160.000, 60.000, 0.000, "I see more laser cannons through the window.\rBut how can I get past those Dentists?","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
+			callbackNewData(new TextData(976.000, 1280.000, 100.000, 50.000, 0.000, "The keys are stored in a room with no doors.\rWhy would they do that? HOW did they do that? ","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
+			callbackNewData(new TextData(848.000, 1320.000, 64.000, 100.000, 0.000, "I think this portal leads back to where I started.\rI'll need a key to turn it on.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
 		}
 
 		public function addSpritesForLayerMobiles(onAddCallback:Function = null):void
@@ -93,10 +106,10 @@ import com.tangentcode.sva.*;
 			addSpriteToLayer(null, Box, MobilesGroup , 96.000, 1240.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 112.000, 1240.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 128.000, 1240.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 992.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 1008.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 1040.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 1056.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 912.000, 1300.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 928.000, 1300.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 912.000, 1320.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 928.000, 1320.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 352.000, 840.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 96.000, 840.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 1104.000, 800.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
@@ -109,8 +122,8 @@ import com.tangentcode.sva.*;
 			addSpriteToLayer(null, Box, MobilesGroup , 1328.000, 860.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 1344.000, 860.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 1344.000, 1440.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 1328.000, 1360.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 1344.000, 1360.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1424.000, 1360.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1440.000, 1360.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Alien, MobilesGroup , 1376.000, 1400.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
 			addSpriteToLayer(null, Alien, MobilesGroup , 1184.000, 1400.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
 			addSpriteToLayer(null, Alien, MobilesGroup , 1280.000, 1400.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
@@ -149,10 +162,10 @@ import com.tangentcode.sva.*;
 			addSpriteToLayer(null, Spider, MobilesGroup , 1104.000, 740.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
 			addSpriteToLayer(null, Box, MobilesGroup , 1296.000, 1440.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 1312.000, 1440.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 1264.000, 1440.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 1280.000, 1440.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1264.000, 1420.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1280.000, 1420.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 1232.000, 1440.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 1248.000, 1440.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1248.000, 1420.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 1200.000, 1440.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 1216.000, 1440.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 1312.000, 1100.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
@@ -169,10 +182,8 @@ import com.tangentcode.sva.*;
 			addSpriteToLayer(null, Alien, MobilesGroup , 1280.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
 			addSpriteToLayer(null, Alien, MobilesGroup , 1312.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
 			addSpriteToLayer(null, Alien, MobilesGroup , 1344.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
-			addSpriteToLayer(null, Alien, MobilesGroup , 1376.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
-			addSpriteToLayer(null, Alien, MobilesGroup , 1408.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
-			addSpriteToLayer(null, Key, MobilesGroup , 928.000, 1320.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Key"
-			addSpriteToLayer(null, Key, MobilesGroup , 992.000, 1320.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Key"
+			addSpriteToLayer(null, Key, MobilesGroup , 1008.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Key"
+			addSpriteToLayer(null, Key, MobilesGroup , 1040.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Key"
 			addSpriteToLayer(null, Box, MobilesGroup , 112.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 80.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 96.000, 800.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
@@ -222,26 +233,26 @@ import com.tangentcode.sva.*;
 			addSpriteToLayer(null, Box, MobilesGroup , 1136.000, 760.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 720.000, 660.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MobilesGroup , 736.000, 660.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Spider, MobilesGroup , 592.000, 800.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
-			addSpriteToLayer(null, Spider, MobilesGroup , 864.000, 840.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
-			addSpriteToLayer(null, Spider, MobilesGroup , 592.000, 840.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
-			addSpriteToLayer(null, Spider, MobilesGroup , 864.000, 800.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
+			addSpriteToLayer(null, Spider, MobilesGroup , 672.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
+			addSpriteToLayer(null, Spider, MobilesGroup , 784.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
+			addSpriteToLayer(null, Spider, MobilesGroup , 720.000, 740.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
+			addSpriteToLayer(null, Spider, MobilesGroup , 736.000, 700.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
 			addSpriteToLayer(null, Spider, MobilesGroup , 352.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
 			addSpriteToLayer(null, Heart, MobilesGroup , 272.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Heart"
 			addSpriteToLayer(null, Heart, MobilesGroup , 1360.000, 1140.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Heart"
 			addSpriteToLayer(null, Heart, MobilesGroup , 1376.000, 1120.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Heart"
 			addSpriteToLayer(null, Heart, MobilesGroup , 1392.000, 1140.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Heart"
-			addSpriteToLayer(null, Spider, MobilesGroup , 1376.000, 1260.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
-			addSpriteToLayer(null, Spider, MobilesGroup , 1392.000, 1280.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
-			addSpriteToLayer(null, Spider, MobilesGroup , 1408.000, 1300.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
-			addSpriteToLayer(null, Spider, MobilesGroup , 1408.000, 1260.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
-			addSpriteToLayer(null, Spider, MobilesGroup , 1376.000, 1300.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
-			addSpriteToLayer(null, Box, MobilesGroup , 1376.000, 1320.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 1392.000, 1320.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 1408.000, 1320.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 1376.000, 1240.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 1392.000, 1240.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			addSpriteToLayer(null, Box, MobilesGroup , 1408.000, 1240.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Spider, MobilesGroup , 1392.000, 1300.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
+			addSpriteToLayer(null, Spider, MobilesGroup , 1248.000, 1440.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
+			addSpriteToLayer(null, Spider, MobilesGroup , 1280.000, 1440.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
+			addSpriteToLayer(null, Spider, MobilesGroup , 1392.000, 1260.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
+			addSpriteToLayer(null, Spider, MobilesGroup , 1440.000, 1340.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
+			addSpriteToLayer(null, Box, MobilesGroup , 1376.000, 1340.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1392.000, 1340.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1408.000, 1340.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1376.000, 1220.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1376.000, 1180.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
+			addSpriteToLayer(null, Box, MobilesGroup , 1376.000, 1200.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Alien, MobilesGroup , 1344.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
 			addSpriteToLayer(null, Alien, MobilesGroup , 1360.000, 820.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Alien"
 			addSpriteToLayer(null, Spider, MobilesGroup , 1392.000, 900.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"startDead", value:false }, null ), onAddCallback );//"Spider"
@@ -287,7 +298,7 @@ import com.tangentcode.sva.*;
 			addSpriteToLayer(null, Box, MachineryGroup , 368.000, 800.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MachineryGroup , 336.000, 800.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			linkedObjectDictionary[19] = addSpriteToLayer(null, Portal, MachineryGroup , 512.000, 1360.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:true }, null ), onAddCallback );//"Portal"
-			linkedObjectDictionary[20] = addSpriteToLayer(null, Portal, MachineryGroup , 272.000, 1060.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:true }, null ), onAddCallback );//"Portal"
+			linkedObjectDictionary[20] = addSpriteToLayer(null, Portal, MachineryGroup , 1040.000, 1440.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:true }, null ), onAddCallback );//"Portal"
 		}
 
 		public function generateObjectLinks(onAddCallback:Function = null):void

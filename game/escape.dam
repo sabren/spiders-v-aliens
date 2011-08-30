@@ -2,7 +2,7 @@
 <project>
   <version>2.0.9</version>
   <bgColor>0x000000</bgColor>
-  <viewPos x="107" y="-971"/>
+  <viewPos x="12" y="-1021"/>
   <firstLayersTop>false</firstLayersTop>
   <spriteEntries currentId="22">
     <sprite name="Alien" idx="1" className="Alien" image="src/assets/images/alien.png" width="16" height="20" preview="0" anchorX="0" anchorY="0" boundsX="0" boundsY="0" boundsWidth="16" boundsHeight="20" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1">
@@ -196,10 +196,10 @@
         <sprite guid="6CA5488C-10AB-A260-A165-6C5D56A8FC67" x="96" y="1240" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="1EEB935B-427F-ECBF-5C6F-CED1902AD038" x="112" y="1240" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="2A3B823D-60A2-DA8D-E211-9E6E66A1E47F" x="128" y="1240" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
-        <sprite guid="13CA9200-F85F-E870-0A85-98BE496734AF" x="992" y="1200" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
-        <sprite guid="860E38C4-09E1-4544-1843-2F6759149922" x="1008" y="1200" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
-        <sprite guid="D9B9653B-CEF5-3BC9-2FF3-E2884F6ECF0D" x="1040" y="1200" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
-        <sprite guid="0A96E38A-176E-540C-387E-4D90685BA5E7" x="1056" y="1200" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
+        <sprite guid="13CA9200-F85F-E870-0A85-98BE496734AF" x="912" y="1300" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
+        <sprite guid="860E38C4-09E1-4544-1843-2F6759149922" x="928" y="1300" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
+        <sprite guid="D9B9653B-CEF5-3BC9-2FF3-E2884F6ECF0D" x="912" y="1320" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
+        <sprite guid="0A96E38A-176E-540C-387E-4D90685BA5E7" x="928" y="1320" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="D6DF36DA-22DB-7088-3CAC-23119130CDF9" x="352" y="840" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="E051D481-E10F-E64B-82CB-FD1933A66574" x="96" y="840" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="F5E0B5F3-D6C2-1760-48A9-36B8A4A897FA" x="1104" y="800" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
@@ -212,8 +212,8 @@
         <sprite guid="D62150B5-7C1F-354E-2250-DD1C480BA4F3" x="1328" y="860" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="235F8E7D-BDD7-65C6-0DEF-5EB2B07AFA3E" x="1344" y="860" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="8D33D5C2-D15D-A59D-4E5B-EBB9431C8144" x="1344" y="1440" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
-        <sprite guid="DB2ED84F-8AC3-5896-30B0-67A0EE7E8C0D" x="1328" y="1360" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
-        <sprite guid="F4940EB4-6772-B14C-A027-CCFC2C6CF71C" x="1344" y="1360" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
+        <sprite guid="DB2ED84F-8AC3-5896-30B0-67A0EE7E8C0D" x="1424" y="1360" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
+        <sprite guid="F4940EB4-6772-B14C-A027-CCFC2C6CF71C" x="1440" y="1360" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="4DBEA20F-D534-F832-7A12-D8A7D677D6E9" x="1376" y="1400" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="1">
           <properties/>
         </sprite>
@@ -310,10 +310,10 @@
         </sprite>
         <sprite guid="DC194471-6C92-3387-48E6-6C3C8FA01F92" x="1296" y="1440" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="733C0F02-E774-753A-D86B-1209F956C44D" x="1312" y="1440" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
-        <sprite guid="8FB25C73-0683-6907-E67A-A38168DD9480" x="1264" y="1440" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
-        <sprite guid="DC88C184-5FFD-A977-FCDE-0C7B234D5E96" x="1280" y="1440" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
+        <sprite guid="8FB25C73-0683-6907-E67A-A38168DD9480" x="1264" y="1420" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
+        <sprite guid="DC88C184-5FFD-A977-FCDE-0C7B234D5E96" x="1280" y="1420" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="BC9C0F65-9277-D069-7FEE-16566964DF45" x="1232" y="1440" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
-        <sprite guid="E24DAAB2-5510-EFE4-F67C-F668708FA59A" x="1248" y="1440" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
+        <sprite guid="E24DAAB2-5510-EFE4-F67C-F668708FA59A" x="1248" y="1420" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="1AC28FBA-3284-650F-B277-613B642ABD72" x="1200" y="1440" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="3045F98F-E3B3-FF18-F3B2-C821EF4B3577" x="1216" y="1440" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="63674700-0CD7-2DC3-DB86-B00489ABF28D" x="1312" y="1100" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
@@ -336,14 +336,8 @@
         <sprite guid="59586F3F-BFB9-E6DA-67EE-4EF48EA104C3" x="1344" y="1200" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="1">
           <properties/>
         </sprite>
-        <sprite guid="A61EED56-3D7D-44EF-3B74-A7A292247FDB" x="1376" y="1200" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="1">
-          <properties/>
-        </sprite>
-        <sprite guid="94C6DC99-D6D9-44FE-0197-04B9D71472C5" x="1408" y="1200" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="1">
-          <properties/>
-        </sprite>
-        <sprite guid="381063A9-6160-C2DA-2E94-2B51C1C206D9" x="928" y="1320" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="13"/>
-        <sprite guid="EA8ECEEA-F773-E866-A2D3-F351878BFE50" x="992" y="1320" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="13"/>
+        <sprite guid="381063A9-6160-C2DA-2E94-2B51C1C206D9" x="1008" y="1200" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="13"/>
+        <sprite guid="EA8ECEEA-F773-E866-A2D3-F351878BFE50" x="1040" y="1200" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="13"/>
         <sprite guid="B8457292-67DE-A0B9-05AA-55D8F5B3A0EF" x="112" y="820" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="63CF4465-EA8C-52E0-6B10-48870181F0AB" x="80" y="820" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="0D1259A6-66EB-1A20-04A9-07EEE55C15E9" x="96" y="800" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
@@ -403,16 +397,16 @@
         <sprite guid="3CAA3748-F9F7-1839-1886-0B2AC9264549" x="1136" y="760" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="06A66036-9035-5D96-ED46-86F3E60DA98A" x="720" y="660" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="44B1B73A-B7E7-8C43-C6FC-64AA13DC6FF8" x="736" y="660" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
-        <sprite guid="96C9D496-3796-BFFB-BB2F-1E9713E4DE6F" x="592" y="800" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
+        <sprite guid="96C9D496-3796-BFFB-BB2F-1E9713E4DE6F" x="672" y="820" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
           <properties/>
         </sprite>
-        <sprite guid="A6582615-9161-7C99-F4F7-BBB39AEEA27C" x="864" y="840" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
+        <sprite guid="A6582615-9161-7C99-F4F7-BBB39AEEA27C" x="784" y="820" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
           <properties/>
         </sprite>
-        <sprite guid="5F7E0F70-6D2B-0D03-09C3-31877DC1946F" x="592" y="840" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
+        <sprite guid="5F7E0F70-6D2B-0D03-09C3-31877DC1946F" x="720" y="740" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
           <properties/>
         </sprite>
-        <sprite guid="244CEDA8-1834-C0DA-E6A7-AA68E4B244D7" x="864" y="800" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
+        <sprite guid="244CEDA8-1834-C0DA-E6A7-AA68E4B244D7" x="736" y="700" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
           <properties/>
         </sprite>
         <sprite guid="F3A05522-8623-BFD4-B300-B295A046CA73" x="352" y="820" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
@@ -422,27 +416,27 @@
         <sprite guid="4111CEEB-1E8D-12DD-75B0-A64994F5AF70" x="1360" y="1140" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="10"/>
         <sprite guid="EB50B9A6-05F1-489E-1056-5C80A980B8DB" x="1376" y="1120" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="10"/>
         <sprite guid="E1D5A3DB-56F0-CDFD-92DF-D43161C52DDA" x="1392" y="1140" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="10"/>
-        <sprite guid="A28A47C2-8EED-92B2-570F-00C02F34F01E" x="1376" y="1260" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
+        <sprite guid="A28A47C2-8EED-92B2-570F-00C02F34F01E" x="1392" y="1300" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
           <properties/>
         </sprite>
-        <sprite guid="AB3DD999-186B-077E-B2FF-B5577BBE9587" x="1392" y="1280" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
+        <sprite guid="AB3DD999-186B-077E-B2FF-B5577BBE9587" x="1248" y="1440" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
           <properties/>
         </sprite>
-        <sprite guid="2135ADC4-EEE7-80BC-18C1-8C80F1F75BE5" x="1408" y="1300" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
+        <sprite guid="2135ADC4-EEE7-80BC-18C1-8C80F1F75BE5" x="1280" y="1440" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
           <properties/>
         </sprite>
-        <sprite guid="FFCC16AD-E335-B9C0-7471-86B89D6E063B" x="1408" y="1260" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
+        <sprite guid="FFCC16AD-E335-B9C0-7471-86B89D6E063B" x="1392" y="1260" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
           <properties/>
         </sprite>
-        <sprite guid="FFB3DE63-8236-0663-AFDE-97EBBA8C81F7" x="1376" y="1300" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
+        <sprite guid="FFB3DE63-8236-0663-AFDE-97EBBA8C81F7" x="1440" y="1340" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="17">
           <properties/>
         </sprite>
-        <sprite guid="DDC99F71-B276-38DB-6B75-E76E6352947F" x="1376" y="1320" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
-        <sprite guid="E7E7CE0C-4BE6-2A2A-D2D4-9A5DC4243A9C" x="1392" y="1320" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
-        <sprite guid="9023B535-5CE8-B1FA-46EE-3DD752DAE577" x="1408" y="1320" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
-        <sprite guid="813C67D6-CAC8-68EF-D55D-A935AAA7E52D" x="1376" y="1240" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
-        <sprite guid="AD2D6EE4-2158-883C-2FDE-8EDF2DFEB823" x="1392" y="1240" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
-        <sprite guid="4E6671C6-449B-687F-30C7-159DE1C9638A" x="1408" y="1240" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
+        <sprite guid="DDC99F71-B276-38DB-6B75-E76E6352947F" x="1376" y="1340" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
+        <sprite guid="E7E7CE0C-4BE6-2A2A-D2D4-9A5DC4243A9C" x="1392" y="1340" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
+        <sprite guid="9023B535-5CE8-B1FA-46EE-3DD752DAE577" x="1408" y="1340" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
+        <sprite guid="813C67D6-CAC8-68EF-D55D-A935AAA7E52D" x="1376" y="1220" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
+        <sprite guid="AD2D6EE4-2158-883C-2FDE-8EDF2DFEB823" x="1376" y="1180" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
+        <sprite guid="4E6671C6-449B-687F-30C7-159DE1C9638A" x="1376" y="1200" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="F65ACAF5-832F-A480-19F4-4650A4A85060" x="1344" y="820" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="1">
           <properties/>
         </sprite>
@@ -538,7 +532,7 @@
         <sprite guid="FDAF7397-4F1F-0BE5-2ABB-AB7A2F3B9B94" x="512" y="1360" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="16">
           <properties/>
         </sprite>
-        <sprite guid="D59DDD97-0BB4-20C4-EEFA-62B7F146710B" x="272" y="1060" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="16">
+        <sprite guid="D59DDD97-0BB4-20C4-EEFA-62B7F146710B" x="1040" y="1440" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="16">
           <properties/>
         </sprite>
       </spritelayer>
@@ -601,7 +595,7 @@
         <row>0,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,0,0,0,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
         <row>0,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,0,0,0,0,0,0,0,0,0,0,17,0,0,0,0,0,0,0,0,0,0,0,17,0,0,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
         <row>0,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,0,0,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,17,0,0,0,0,0,0,0,0,0,0,0,0,0,17,0,0,0,0,17,0,0,0,0,13,15,0,13,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,15,0,13,15,0,0,17,0,0,0,0,0,0,0,0,0,0,0,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,17,0,0,0,0,0,0,0,0,0,0,0,0,0,17,0,0,0,0,17,0,0,0,0,13,15,0,13,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,15,0,13,15,0,0,17,13,14,14,14,14,14,14,14,14,15,0,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
         <row>0,17,0,0,0,0,0,0,0,0,0,0,0,17,0,0,0,0,0,0,17,0,0,0,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,0,0,0,0,0,0,0,17,0,0,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
         <row>0,17,0,0,0,0,0,0,0,0,0,0,0,17,0,0,0,0,0,0,17,0,0,0,17,0,0,0,0,0,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,0,0,0,0,0,0,0,17,0,0,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
         <row>0,17,0,0,0,0,0,0,0,0,0,0,0,17,0,0,0,0,0,0,17,7,11,0,20,5,11,11,11,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,0,0,0,0,0,0,0,17,0,0,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
@@ -697,11 +691,24 @@
         <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
       </maplayer>
       <shapelayer name="Narration" xScroll="1" yScroll="1" visible="true" locked="false" exports="true" aligned="false" sort="false" selected="true">
-        <shape guid="F519428E-4D91-1619-E703-552D8DEDE32D" x="464" y="1320" Z="0" angle="0" width="80.00" height="100.00" text="HERE IS SOME COOL COOL TEXT." family="system" fontsize="8" align="center" color="16777215"/>
+        <shape guid="F519428E-4D91-1619-E703-552D8DEDE32D" x="464" y="1320" Z="0" angle="0" width="80.00" height="100.00" text="When I come to, the Dentists are dead. Good riddance.&#xD;I can see my ship outside. Now's my chance to escape!" family="system" fontsize="8" align="center" color="16777215"/>
         <shape guid="B28AC3FD-C815-CE24-7707-E8762D38C72E" x="560" y="1320" Z="0" angle="0" width="64.00" height="60.00" text="This is a portal.&#xD;It's locked from the other side." family="system" fontsize="8" align="center" color="16777215"/>
-        <shape guid="3BD6D6AD-3442-9E6B-1C1B-00AA23D1D530" x="384" y="1380" Z="0" angle="0" width="64.00" height="60.00" text="This is a Portal.&#xD;Nyah Nyah Blah blah blah." family="system" fontsize="8" align="center" color="16777215"/>
-        <shape guid="B5ABF598-A23C-8EF5-11A4-D24F9F202E42" x="528" y="1280" Z="0" angle="0" width="80.00" height="30.00" text="Right click to edit text." family="system" fontsize="8" align="center" color="16777215"/>
-        <shape guid="10E07FEA-E754-56E9-2BF1-8FB113196C2D" x="400" y="1280" Z="0" angle="0" width="80.00" height="30.00" text="Right click to edit text." family="system" fontsize="8" align="center" color="16777215"/>
+        <shape guid="3BD6D6AD-3442-9E6B-1C1B-00AA23D1D530" x="384" y="1380" Z="0" angle="0" width="64.00" height="60.00" text="This is a Portal.&#xD;I can grab it to teleport to the other side." family="system" fontsize="8" align="center" color="16777215"/>
+        <shape guid="B5ABF598-A23C-8EF5-11A4-D24F9F202E42" x="528" y="1280" Z="0" angle="0" width="80.00" height="30.00" text="I can see my spaceship docked outside.&#xD;I call her the Consolas. Isn't she a beauty?" family="system" fontsize="8" align="center" color="16777215"/>
+        <shape guid="10E07FEA-E754-56E9-2BF1-8FB113196C2D" x="400" y="1280" Z="0" angle="0" width="80.00" height="30.00" text="I can see the airlock leading to my ship.&#xD;But how am I supposed to get in there?" family="system" fontsize="8" align="center" color="16777215"/>
+        <shape guid="C86177A7-C3CF-4CAF-359B-C863D87C24E6" x="304" y="1360" Z="0" angle="0" width="64.00" height="100.00" text="Arnaxian gut spiders. They can't hurt me.&#xD;Looks like the Dentists trapped them all in here." family="system" fontsize="8" align="center" color="16777215"/>
+        <shape guid="EFC254E7-0225-E3B1-A976-F39FEA18676A" x="96" y="1320" Z="0" angle="0" width="48.00" height="60.00" text="The Dentists blockaded the hallway.&#xD;I'll have to drag those boxes out of the way." family="system" fontsize="8" align="center" color="16777215"/>
+        <shape guid="F5127C90-FB1D-43F0-0CED-C3DF563BAF4A" x="272" y="920" Z="0" angle="0" width="48.00" height="60.00" text="Those heart-shaped things are medical equipment.&#xD;They'll come in handy if I get injured." family="system" fontsize="8" align="center" color="16777215"/>
+        <shape guid="DB20E787-8BB2-64B6-895F-B12A2053D2A4" x="320" y="1140" Z="0" angle="0" width="48.00" height="100.00" text="This portal is controlled by a lock on the other side.&#xD;I'll need a key to turn it back on." family="system" fontsize="8" align="center" color="16777215"/>
+        <shape guid="1B9AE37D-D0A5-6CF5-F914-79284C0BA46F" x="96" y="1260" Z="0" angle="0" width="48.00" height="60.00" text="Uh-oh. More Dentists, and they don't look happy.&#xD;I'd better find some kind of weapon." family="system" fontsize="8" align="center" color="16777215"/>
+        <shape guid="769962C5-1801-156D-DE5E-BCF2F3934C38" x="496" y="800" Z="0" angle="0" width="80.00" height="60.00" text="I can grab the switch to turn this portal on and off." family="system" fontsize="8" align="center" color="16777215"/>
+        <shape guid="DE13C353-C33C-12B9-2C22-0532CCED69D0" x="544" y="600" Z="0" angle="0" width="144.00" height="50.00" text="They've trapped the mimeogeist in some kind of cage.&#xD;I should let the poor thing out." family="system" fontsize="8" align="center" color="16777215"/>
+        <shape guid="433B5E45-95FA-CDBE-A271-A8DA8CED50EB" x="704" y="600" Z="0" angle="0" width="64.00" height="50.00" text="What the heck? Is that...?&#xD;What are Dentists doing with a mimeogeist?!" family="system" fontsize="8" align="center" color="16777215"/>
+        <shape guid="19F58C80-46B2-5D03-FEE7-F387F10A6B95" x="816" y="800" Z="0" angle="0" width="64.00" height="60.00" text="The switch is on the other side of the wall.&#xD;How am I supposed to turn this portal on?" family="system" fontsize="8" align="center" color="16777215"/>
+        <shape guid="3C1A6743-2642-B047-F93C-339DA45E16B7" x="976" y="800" Z="0" angle="0" width="64.00" height="60.00" text="Laser cannons! Now we're talking. I can grab&#xD;them from any side to fire in the opposite direction." family="system" fontsize="8" align="center" color="16777215"/>
+        <shape guid="44E5168C-4828-4B2E-4D25-02AE9061C5C5" x="1120" y="1040" Z="0" angle="0" width="160.00" height="60.00" text="I see more laser cannons through the window.&#xD;But how can I get past those Dentists?" family="system" fontsize="8" align="center" color="16777215"/>
+        <shape guid="41D62F4D-2CA1-E1B6-4FD6-2D305A2D8BA7" x="976" y="1280" Z="0" angle="0" width="100.00" height="50.00" text="The keys are stored in a room with no doors.&#xD;Why would they do that? HOW did they do that? " family="system" fontsize="8" align="center" color="16777215"/>
+        <shape guid="09C474F7-D9B0-3C6A-049A-B98FEC770293" x="848" y="1320" Z="0" angle="0" width="64.00" height="100.00" text="I think this portal leads back to where I started.&#xD;I'll need a key to turn it on." family="system" fontsize="8" align="center" color="16777215"/>
       </shapelayer>
     </group>
     <group name="Opening" xScroll="1" yScroll="1" visible="false" open="true" locked="false" exports="true">
