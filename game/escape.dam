@@ -2,7 +2,7 @@
 <project>
   <version>2.0.9</version>
   <bgColor>0x000000</bgColor>
-  <viewPos x="12" y="-1021"/>
+  <viewPos x="-134" y="-972"/>
   <firstLayersTop>false</firstLayersTop>
   <spriteEntries currentId="22">
     <sprite name="Alien" idx="1" className="Alien" image="src/assets/images/alien.png" width="16" height="20" preview="0" anchorX="0" anchorY="0" boundsX="0" boundsY="0" boundsWidth="16" boundsHeight="20" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1">
@@ -69,7 +69,6 @@
     <link from="B6BFDC0E-2466-7786-522D-1A7BB32096A4" to="F3808F15-F81E-FEC1-092F-371A029F1480"/>
     <link from="8E725BDC-8CDD-6903-6D2C-7B28BEF6341B" to="A6290D30-96F8-7025-19E1-F50E9068BEBA"/>
     <link from="F3808F15-F81E-FEC1-092F-371A029F1480" to="33161F29-BB62-241A-F446-9DB18F4C3782"/>
-    <link from="FDAF7397-4F1F-0BE5-2ABB-AB7A2F3B9B94" to="D59DDD97-0BB4-20C4-EEFA-62B7F146710B"/>
   </links>
   <layers>
     <group name="AlienShip" xScroll="1" yScroll="1" visible="true" open="true" locked="false" exports="true">
@@ -529,12 +528,6 @@
         <sprite guid="25B8AAC0-3A62-F981-67E9-3D9501DCEE81" x="368" y="840" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="0FD7936F-681D-C8AA-392D-63C572F24EA8" x="368" y="800" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
         <sprite guid="A834BC5D-D248-571E-B9D5-A6DF0D185598" x="336" y="800" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4"/>
-        <sprite guid="FDAF7397-4F1F-0BE5-2ABB-AB7A2F3B9B94" x="512" y="1360" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="16">
-          <properties/>
-        </sprite>
-        <sprite guid="D59DDD97-0BB4-20C4-EEFA-62B7F146710B" x="1040" y="1440" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="16">
-          <properties/>
-        </sprite>
       </spritelayer>
       <maplayer name="Decorations" xScroll="1" yScroll="1" x="0" y="0" width="240" height="75" tileset="src/assets/images/railings.png" tileWidth="16" tileHeight="20" visible="true" hasHits="false" drawIdx="1" collideIdx="50" eraseIdx="0" locked="false" exports="true" tileSpacingX="16" tileSpacingY="20" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
         <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
@@ -693,7 +686,7 @@
       <shapelayer name="Narration" xScroll="1" yScroll="1" visible="true" locked="false" exports="true" aligned="false" sort="false" selected="true">
         <shape guid="F519428E-4D91-1619-E703-552D8DEDE32D" x="464" y="1320" Z="0" angle="0" width="80.00" height="100.00" text="When I come to, the Dentists are dead. Good riddance.&#xD;I can see my ship outside. Now's my chance to escape!" family="system" fontsize="8" align="center" color="16777215"/>
         <shape guid="B28AC3FD-C815-CE24-7707-E8762D38C72E" x="560" y="1320" Z="0" angle="0" width="64.00" height="60.00" text="This is a portal.&#xD;It's locked from the other side." family="system" fontsize="8" align="center" color="16777215"/>
-        <shape guid="3BD6D6AD-3442-9E6B-1C1B-00AA23D1D530" x="384" y="1380" Z="0" angle="0" width="64.00" height="60.00" text="This is a Portal.&#xD;I can grab it to teleport to the other side." family="system" fontsize="8" align="center" color="16777215"/>
+        <shape guid="3BD6D6AD-3442-9E6B-1C1B-00AA23D1D530" x="384" y="1380" Z="0" angle="0" width="64.00" height="60.00" text="This is a portal.&#xD;I can grab it to teleport to the other side." family="system" fontsize="8" align="center" color="16777215"/>
         <shape guid="B5ABF598-A23C-8EF5-11A4-D24F9F202E42" x="528" y="1280" Z="0" angle="0" width="80.00" height="30.00" text="I can see my spaceship docked outside.&#xD;I call her the Consolas. Isn't she a beauty?" family="system" fontsize="8" align="center" color="16777215"/>
         <shape guid="10E07FEA-E754-56E9-2BF1-8FB113196C2D" x="400" y="1280" Z="0" angle="0" width="80.00" height="30.00" text="I can see the airlock leading to my ship.&#xD;But how am I supposed to get in there?" family="system" fontsize="8" align="center" color="16777215"/>
         <shape guid="C86177A7-C3CF-4CAF-359B-C863D87C24E6" x="304" y="1360" Z="0" angle="0" width="64.00" height="100.00" text="Arnaxian gut spiders. They can't hurt me.&#xD;Looks like the Dentists trapped them all in here." family="system" fontsize="8" align="center" color="16777215"/>

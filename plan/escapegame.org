@@ -25,7 +25,7 @@
 
 
 
-* TODO iteration 2 : sprite interactions
+* DONE iteration 2 : sprite interactions
 ** DONE win game on grabbing goal
 playstate change.
 ** DONE aliens hurt hero
@@ -51,12 +51,9 @@ playstate change.
 ** DONE keep geist inside the ship
 ** DONE send power between machines
 
-** TODO show text for each screen/area
-** TODO opening cut scenes
 
-
-* iteration 3 : map and story
-** basic map:
+* DONE iteration 3 : map and story
+** DONE basic map:
 
 #+BEGIN_SRC ditaa
 
@@ -81,17 +78,7 @@ playstate change.
 
 #+END_SRC
 
-** story text
-*** opening cutscene
-- The dentists grabbed me outside Rushmore spaceport.
-  They had me on their table. I should have been a dead man.
-
-- Turns out Dentists don't much care for Arnaxian spider venum.
-  Gut spiders. Sick. All this time I thought it was acid reflux.
-
-- I crack a smile as the anesthesia finally takes control.
-  The world goes dark.
-
+** DONE story text
 *** room 1
  - When I come to, the Dentists are dead. Good riddance.
    I can see my ship outside. Now's my chance to escape!
@@ -134,12 +121,26 @@ playstate change.
 
 
 
-* ---------------------
-* polish:
-- better shadows for 3d
-* iteration ? : music
+* TODO iteration 4 : cutscenes, music, sound effects
+** DONE normal game music
+** DONE opening cut scene(s)
 
-* sequel: re-add tractors
-** TODO button triggers lift
-** TODO lift pushes blocks
-** TODO lift pushes multiple blocks ?
+- The dentists grabbed me outside Rushmore spaceport.
+  They had me on their table. I should have been a dead man.
+
+- Turns out Dentists don't much care for Arnaxian spider venum.
+  Gut spiders. Sick. All this time I thought it was acid reflux.
+
+- I crack a smile as the anesthesia finally takes control.
+  The world goes dark.
+** TODO make the unpowered items darker
+** TODO DeathState music
+** TODO WinState music
+** TODO WinState scene
+** TODO sound effects
+- [ ] alien death
+- [ ] cannon fire
+- [ ] teleport
+- [ ] power on
+
+    

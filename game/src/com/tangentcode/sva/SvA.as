@@ -67,6 +67,12 @@ package com.tangentcode.sva
 		[Embed(source = "../../../assets/images/ship.png")]
 		public static var ImgHeroShip:Class;
 		
+		[Embed(source = "../../../assets/images/opening-01.png")]
+		public static var ImgOpening01:Class;
+		
+		[Embed(source = "../../../assets/images/opening-02.png")]
+		public static var ImgOpening02:Class;
+		
 		[Embed(source = "../../../assets/images/portal.png")]
 		public static var ImgPortal:Class;
 		
@@ -154,6 +160,7 @@ package com.tangentcode.sva
 				default: return dir;
 			}
 		}
+		
 	}
 
 }

@@ -2,17 +2,8 @@ package com.tangentcode.sva
 {
 	import org.flixel.*;
 
-	public class MenuState extends FlxState
+	public class MenuState extends BaseState
 	{
-		
-		private function addText(y:Number, size:int, text:String, color:uint=0xffcccccc):void
-		{
-			var t:FlxText = new FlxText(0, y, FlxG.width, text);
-			t.size = size;
-			t.color = color;
-			t.alignment = "center";
-			add(t);
-		}
 		
 		override public function create():void
 		{
@@ -30,12 +21,11 @@ package com.tangentcode.sva
 		override public function update():void
 		{
 			super.update();
-			if(FlxG.keys.SPACE)
+			if(FlxG.keys.justPressed("SPACE"))
 			{
-				FlxG.switchState(new PlayState());
+				FlxG.switchState(new Opening01State());
 			}
 		}
 	}
 
 }
-

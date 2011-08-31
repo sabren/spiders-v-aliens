@@ -1,5 +1,6 @@
 package com.tangentcode.sva
 {
+	import com.tangentcode.TeleType;
 	import flash.display.DisplayObject;
 	import flash.geom.Point;
 	import flash.text.engine.BreakOpportunity;
@@ -15,7 +16,7 @@ package com.tangentcode.sva
 		protected var mGeist:Geist;
 		
 		protected var mHudHearts:Array = new Array();
-		protected var mHudText:FlxText;
+		protected var mHudText:TeleType;
 		
 		protected var mNarration:FlxGroup = new FlxGroup();
 		
@@ -30,12 +31,14 @@ package com.tangentcode.sva
 		
 		// these only get added to the map when certain things happen:
 		protected var mBullets:FlxGroup = new FlxGroup();
-		protected var mGrabbers:FlxGroup = new FlxGroup();		
-
+		protected var mGrabbers:FlxGroup = new FlxGroup();
+	
+		
 		// these two are supersets for bullets and portals/pushers, respectively:
 		protected var mOrganics:FlxGroup = new FlxGroup();
 		protected var mDraggable:FlxGroup = new FlxGroup();
 		protected var mMobiles:FlxGroup = new FlxGroup();
+		protected var mWeapons:FlxGroup = new FlxGroup();
 		
 		private var mAvatars:FlxGroup = new FlxGroup();
 		
@@ -73,12 +76,16 @@ package com.tangentcode.sva
 			// TODO: mMobiles.add(mAvatar);
 			mMobiles.add(mHero);
 			mMobiles.add(mDraggable);
-
+			
+			mWeapons.add(mSpiders);
+			mWeapons.add(mBullets);
+			
 			// mMobiles.add(mTractors);
 			// mMobiles.add(mBullets); // hearts?
 			
+			// narration boxes collide, but ought to be invisible:
+			mNarration.visible = false;
 			add(mNarration);
-			
 			
 			// camera bounds
 			FlxG.camera.setBounds(0, 0, SvA.CellW * 40 * 4, SvA.CellH * 25 * 4,
@@ -107,8 +114,7 @@ package com.tangentcode.sva
 				add(h);
 			}
 			
-			mHudText = new FlxText(hudPadding, FlxG.height - hudHeight + hudPadding * 2, FlxG.width * 0.75,
-						"This is the Hud.\nBooyah.");
+			mHudText = new TeleType(hudPadding, FlxG.height - hudHeight + hudPadding * 2, FlxG.width * 0.75, "");
 			mHudText.size = 14;
 			mHudText.scrollFactor = noScroll;
 			add(mHudText);
@@ -180,7 +186,7 @@ package com.tangentcode.sva
 					
 					// always follow the owner, possibly dragging something along:
 					g.reposition();
-
+					
 					if (mGrabKeys[dir])
 					{
 						g.exists = true;
@@ -219,7 +225,7 @@ package com.tangentcode.sva
 				FlxG.camera.follow(mToggleCam ? mGeist : mHero );
 				FlxG.camera.focusOn(mToggleCam ? mGeist.last : mHero.last );
 			}
-
+			
 			mGeist.solid = true;
 			FlxG.collide(mShip.layerGeistWall, mGeist);
 			mGeist.solid = false;
@@ -228,12 +234,10 @@ package com.tangentcode.sva
 			FlxG.overlap(mHero, mPickups, onPickup);
 			FlxG.overlap(mKeys, mMachines, onKeyVsMachine);
 			FlxG.collide(mShip.masterLayer, mMobiles, onCollide);
-			FlxG.overlap(mSpiders, mAliens, onSpiderVsAlien);
+			FlxG.overlap(mWeapons, mAliens, onKillAlien);
 			FlxG.collide(mBullets, mShip.masterLayer, onBulletVsAnything);
 			
-			mHudText.text = "";
-			FlxG.overlap(mHero, mNarration, onNarration);
-			
+			narrate();			
 			
 			if (mHero.wasHurt)
 			{
@@ -241,7 +245,7 @@ package com.tangentcode.sva
 				updateHearts();
 				mHero.wasHurt = false;
 			}
-
+			
 			super.update();
 		}
 		
@@ -283,7 +287,6 @@ package com.tangentcode.sva
 					}
 				}
 			}
-
 			
 			if (obj is ObjectLink)
 			{
@@ -357,9 +360,23 @@ package com.tangentcode.sva
 		}
 		
 		
+		private var mOldText:String = "";
+		private var mNewText:String = "";
+		private function narrate():void
+		{
+			mNewText = "";
+			FlxG.overlap(mHero, mNarration, onNarration);
+			if (mNewText != mOldText)
+			{
+				mOldText = mNewText;
+				mHudText.fullText = mNewText;
+			}
+		}
+		
+		
 		private function onNarration(hero:FlxSprite, narration:Narration):void
 		{
-			mHudText.text = narration.text;
+			mNewText = narration.text;
 		}
 		
 		private function onCollide(o1:FlxObject, o2:FlxObject):void
@@ -417,6 +434,14 @@ package com.tangentcode.sva
 			thing.kill();
 		}		
 		
+		private function onKillAlien(weapon:FlxSprite, alien:FlxObject):void
+		{
+			if (weapon is Bullet)
+				onBulletVsAnything(weapon, alien);
+			else if (weapon is Spider)
+				onSpiderVsAlien(weapon, alien as FlxSprite);
+		}
+		
 		private function onBulletVsAnything(bullet:FlxSprite, organic:FlxObject):void
 		{
 			if (organic is Alien && ! organic.alive)
@@ -427,7 +452,7 @@ package com.tangentcode.sva
 			}
 			bullet.kill();
 		}
-
+		
 		private function onGrabDraggable(grabber:Grabber, thing:FlxSprite):void
 		{
 			if (! grabber.done)
@@ -464,11 +489,10 @@ package com.tangentcode.sva
 			}
 		}
 		
-
 		private function onTractorVsMobile(pusher:FlxSprite, mobile:FlxSprite):void
 		{
 		}
-
+		
 		// !! not sure about this one yet...
 		private function onMobileCollide(pusher:FlxSprite, mobile:FlxSprite):void
 		{

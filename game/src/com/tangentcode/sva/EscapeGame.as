@@ -10,6 +10,7 @@ package com.tangentcode.sva
 		public function EscapeGame()
 		{
 			super(640, 480, MenuState, 1.0);
+//			super(640, 480, DeathState, 1.0);
 		}
 		
 		

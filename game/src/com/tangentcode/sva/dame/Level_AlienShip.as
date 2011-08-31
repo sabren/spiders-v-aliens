@@ -82,7 +82,7 @@ import com.tangentcode.sva.*;
 			callbackNewData(new TextData(464.000, 1320.000, 80.000, 100.000, 0.000, "When I come to, the Dentists are dead. Good riddance.\rI can see my ship outside. Now's my chance to escape!","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
 			callbackNewData(new TextData(560.000, 1320.000, 64.000, 60.000, 0.000, "This is a portal.\rIt's locked from the other side.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
 			callbackNewData(new TextData(384.000, 1380.000, 64.000, 60.000, 0.000, "This is a Portal.\rI can grab it to teleport to the other side.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
-			callbackNewData(new TextData(528.000, 1280.000, 80.000, 30.000, 0.000, "I can see my spaceship docked outside.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
+			callbackNewData(new TextData(528.000, 1280.000, 80.000, 30.000, 0.000, "I can see my spaceship docked outside.\rI call her the Consolas. Isn't she a beauty?","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
 			callbackNewData(new TextData(400.000, 1280.000, 80.000, 30.000, 0.000, "I can see the airlock leading to my ship.\rBut how am I supposed to get in there?","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
 			callbackNewData(new TextData(304.000, 1360.000, 64.000, 100.000, 0.000, "Arnaxian gut spiders. They can't hurt me.\rLooks like the Dentists trapped them all in here.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
 			callbackNewData(new TextData(96.000, 1320.000, 48.000, 60.000, 0.000, "The Dentists blockaded the hallway.\rI'll have to drag those boxes out of the way.","system", 8, 0xffffff, "center"), onAddCallback, NarrationGroup, generateProperties( null ), 1, 1 ) ;
@@ -297,8 +297,6 @@ import com.tangentcode.sva.*;
 			addSpriteToLayer(null, Box, MachineryGroup , 368.000, 840.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MachineryGroup , 368.000, 800.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
 			addSpriteToLayer(null, Box, MachineryGroup , 336.000, 800.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( null ), onAddCallback );//"Box"
-			linkedObjectDictionary[19] = addSpriteToLayer(null, Portal, MachineryGroup , 512.000, 1360.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:true }, null ), onAddCallback );//"Portal"
-			linkedObjectDictionary[20] = addSpriteToLayer(null, Portal, MachineryGroup , 1040.000, 1440.000, 0.000, 1, 1, false, 1.000, 1.000, generateProperties( { name:"hasPower", value:true }, null ), onAddCallback );//"Portal"
 		}
 
 		public function generateObjectLinks(onAddCallback:Function = null):void
@@ -320,7 +318,6 @@ import com.tangentcode.sva.*;
 			createLink(linkedObjectDictionary[16], linkedObjectDictionary[18], onAddCallback, generateProperties( null ) );
 			createLink(linkedObjectDictionary[14], linkedObjectDictionary[15], onAddCallback, generateProperties( null ) );
 			createLink(linkedObjectDictionary[18], linkedObjectDictionary[17], onAddCallback, generateProperties( null ) );
-			createLink(linkedObjectDictionary[19], linkedObjectDictionary[20], onAddCallback, generateProperties( null ) );
 		}
 
 	}
